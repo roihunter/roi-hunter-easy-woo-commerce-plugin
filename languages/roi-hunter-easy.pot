@@ -1,0 +1,117 @@
+# Copyright (C) 2018 roi-hunter-easy
+# This file is distributed under the same license as the roi-hunter-easy package.
+msgid ""
+msgstr ""
+"Project-Id-Version: roi-hunter-easy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Kybernaut <karolina@kybernaut.cz>\n"
+"Last-Translator: Karolína Vyskočilová <karolina@kybernaut.cz>\n"
+"Report-Msgid-Bugs-To: https://kybernaut.cz/kontakt/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: roi-hunter-easy.php:98, includes/admin/wc-settings-tab.php:22, includes/admin/wc-settings-tab.php:36
+msgid "ROI Hunter Easy"
+msgstr ""
+
+#: roi-hunter-easy.php:99
+msgid "WooCommerce"
+msgstr ""
+
+#: roi-hunter-easy.php:105
+msgid "%1$s requires %2$s version %3$s. Please activate/install %2$s before activation of %1$s. "
+msgstr ""
+
+#: roi-hunter-easy.php:109
+msgid "%1$s requires %2$s version %3$s. Please upgrade %2$s at least to version %3$s before activation of %1$s. "
+msgstr ""
+
+#: roi-hunter-easy.php:115
+msgid "%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>"
+msgstr ""
+
+#: roi-hunter-easy.php:119
+msgid "The plugin has been deactivated."
+msgstr ""
+
+#: includes/class-rh-easy-helper.php:182
+msgid "Roi Hunter Easy"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:19
+msgid "ROI Hunter Easy Integration"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:20
+msgid "Enable integration with ROI Hunter Easy service"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:42
+msgid "Key ID"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:48
+msgid "Customer Key"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:54
+msgid "Customer Secret"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:66
+msgid "Customer ID"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:72
+msgid "Access token"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:78
+msgid "Google Conversion ID"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:84
+msgid "Google Conversion Label"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:90
+msgid "Facebook Pixel ID"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:96
+msgid "Client token"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:102
+msgid "Cleanup on Uninstall"
+msgstr ""
+
+#: includes/class-rh-easy-integration.php:103
+msgid "Completely remove settings on plugin removal"
+msgstr ""
+
+#: includes/rest-api-endpoints.php:138, includes/rest-api-endpoints.php:167, includes/rest-api-endpoints.php:212, includes/rest-api-endpoints.php:245, includes/rest-api-endpoints.php:277, includes/rest-api-endpoints.php:322
+msgid "Provided clientToken is not valid or empty"
+msgstr ""
+
+#: includes/rest-api-endpoints.php:192
+msgid "Passed parameters are not supported."
+msgstr ""
+
+#: includes/admin/plugin-settings-link.php:18
+msgid "View settings"
+msgstr ""
+
+#: includes/admin/plugin-settings-link.php:18
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/wc-settings-tab.php:117
+msgid "Your browser does not support iFrames."
+msgstr ""

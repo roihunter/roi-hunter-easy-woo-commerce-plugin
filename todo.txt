@@ -1,0 +1,8 @@
+TODO
+- debug endpoint - co posílat?
+- smazat všechny uživatele WooCommerce API při mazání pluginu
+- přesunout z WooCommerce->Nastavení do vlastního odkazu v menu (bude třeba předělat získávání nastavení)
+- přidat hlášku po aktivaci
+
+LATER
+- statistiky z pluginu rovnou na dashboard
