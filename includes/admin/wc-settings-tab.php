@@ -60,9 +60,7 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
         // Check if WooCommerce REST API enabled and if user exists
         $helper->check_woocommerce_rest_api();
 
-        // TODO jak se předá your_consumer_key:your_consumer_secret
-
-        $iframe = apply_filters( 'roi_hunter_easy_iframe_attributes', array( 
+        $iframe = apply_filters( 'roi_hunter_easy_iframe_attributes', array(
             'type' => 'rh-easy-woo-commerce-initial-message',
             'storeUrl' => get_bloginfo('url'), // Public url of store homepage
             'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
@@ -74,7 +72,7 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
             'storeCountry' => $location['country'], // Primary target country of the store
             'pluginVersion' => RH_EASY_VERSION,
             'stagingActive' => true, // deprecated, bude se odstraňovat
-            'activeBeProfile' => 'production', // Active application profile (production, staging, dev) //TODO, jak si to bude klient nastavovat? Zatím filtr, možná do budoucna řešit konstantou ve WP configu?
+            'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
             'customerId' => $helper->get_option( 'customer_id' ), // RH Easy customer ID
             'accessToken' => $helper->get_option( 'access_token' ), // RH Easy access token
             'clientToken' => $helper->get_option( 'clientToken' ), // Client token for authentication in store API (eg. https://my-woo-store.com/wp-json/roihuntereasy/state)
