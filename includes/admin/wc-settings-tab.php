@@ -63,7 +63,7 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
         // TODO jak se předá your_consumer_key:your_consumer_secret
 
         $iframe = apply_filters( 'roi_hunter_easy_iframe_attributes', array( 
-            'type' => 'roihunter_magento_plugin', // TODO nahradit pak za woocommerce plugin
+            'type' => 'rh-easy-woo-commerce-initial-message',
             'storeUrl' => get_bloginfo('url'), // Public url of store homepage
             'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
             'callbackUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1/state', // Url of API for setting data to store
