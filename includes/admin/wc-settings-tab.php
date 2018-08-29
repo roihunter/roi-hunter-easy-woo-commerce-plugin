@@ -54,7 +54,7 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
         WC_Admin_Settings::output_fields( $settings );
 
         $location = wc_get_base_location();
-        $language = strtoupper( substr( get_bloginfo ( 'language' ), 0, 2 ) );
+        $language = substr( get_bloginfo ( 'language' ), 0, 2 );
         $helper = new RH_Easy_Helper();
 
         // Check if WooCommerce REST API enabled and if user exists
