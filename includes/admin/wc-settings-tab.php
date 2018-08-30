@@ -64,8 +64,8 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
             'type' => 'rh-easy-woo-commerce-initial-message',
             'storeUrl' => get_bloginfo('url'), // Public url of store homepage
             'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
-            'callbackUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1/state', // Url of API for setting data to store
-            'checkUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1/check', // Url of endpoint for checking if RH Easy plugin is active
+            'rhStateApiBaseUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1',
+            'checkUrl' => $rh_state_api_base_url . '/check', // Url of endpoint for checking if RH Easy plugin is active
             'storeName' => get_bloginfo('name'), // Name of the store
             'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
             'storeLanguage' => $language, // Primary language of the store
