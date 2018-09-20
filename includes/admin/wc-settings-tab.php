@@ -65,13 +65,11 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
             'storeUrl' => get_bloginfo('url'), // Public url of store homepage
             'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
             'rhStateApiBaseUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1',
-            'checkUrl' => $rh_state_api_base_url . '/check', // Url of endpoint for checking if RH Easy plugin is active
             'storeName' => get_bloginfo('name'), // Name of the store
             'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
             'storeLanguage' => $language, // Primary language of the store
             'storeCountry' => $location['country'], // Primary target country of the store
             'pluginVersion' => RH_EASY_VERSION,
-            'stagingActive' => true, // deprecated, bude se odstraňovat
             'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
             'customerId' => $helper->get_option( 'customer_id' ), // RH Easy customer ID
             'accessToken' => $helper->get_option( 'access_token' ), // RH Easy access token
