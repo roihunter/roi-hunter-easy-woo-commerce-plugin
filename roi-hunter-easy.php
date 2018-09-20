@@ -134,6 +134,5 @@ function rhe_debug( $code ) {
 
 add_filter( 'roi_hunter_easy_iframe_attributes', 'kv_roi_hunter_easy_iframe_attributes');
 function kv_roi_hunter_easy_iframe_attributes( $iframe ) {
-	$iframe['activeBeProfile'] = 'dev';
 	return $iframe;
 }
