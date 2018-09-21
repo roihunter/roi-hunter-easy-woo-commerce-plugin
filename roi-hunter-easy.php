@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'RH_EASY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RH_EASY_URL', plugin_dir_url( __FILE__ ) );
 define( 'RH_EASY_BASENAME', plugin_basename( __FILE__ ) );
-define( 'RH_EASY_VERSION', '0.0.3' );
+define( 'RH_EASY_VERSION', 'woo-commerce-0.0.3' );
 define( 'RH_EASY_MIN_WC_VERSION', '3.4.0');
 
 /**
@@ -134,6 +134,6 @@ function rhe_debug( $code ) {
 
 add_filter( 'roi_hunter_easy_iframe_attributes', 'kv_roi_hunter_easy_iframe_attributes');
 function kv_roi_hunter_easy_iframe_attributes( $iframe ) {
-	$iframe['activeBeProfile'] = 'dev';
+	$iframe['activeBeProfile'] = 'staging';
 	return $iframe;
 }

@@ -54,27 +54,23 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
         WC_Admin_Settings::output_fields( $settings );
 
         $location = wc_get_base_location();
-        $language = strtoupper( substr( get_bloginfo ( 'language' ), 0, 2 ) );
+        $language = substr( get_bloginfo ( 'language' ), 0, 2 );
         $helper = new RH_Easy_Helper();
 
         // Check if WooCommerce REST API enabled and if user exists
         $helper->check_woocommerce_rest_api();
 
-        // TODO jak se předá your_consumer_key:your_consumer_secret
-
-        $iframe = apply_filters( 'roi_hunter_easy_iframe_attributes', array( 
-            'type' => 'roihunter_magento_plugin', // TODO nahradit pak za woocommerce plugin
+        $iframe = apply_filters( 'roi_hunter_easy_iframe_attributes', array(
+            'type' => 'rh-easy-woo-commerce-initial-message',
             'storeUrl' => get_bloginfo('url'), // Public url of store homepage
             'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
-            'callbackUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1/state', // Url of API for setting data to store
-            'checkUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1/check', // Url of endpoint for checking if RH Easy plugin is active
+            'rhStateApiBaseUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1',
             'storeName' => get_bloginfo('name'), // Name of the store
             'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
             'storeLanguage' => $language, // Primary language of the store
             'storeCountry' => $location['country'], // Primary target country of the store
             'pluginVersion' => RH_EASY_VERSION,
-            'stagingActive' => true, // deprecated, bude se odstraňovat
-            'activeBeProfile' => 'production', // Active application profile (production, staging, dev) //TODO, jak si to bude klient nastavovat? Zatím filtr, možná do budoucna řešit konstantou ve WP configu?
+            'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
             'customerId' => $helper->get_option( 'customer_id' ), // RH Easy customer ID
             'accessToken' => $helper->get_option( 'access_token' ), // RH Easy access token
             'clientToken' => $helper->get_option( 'clientToken' ), // Client token for authentication in store API (eg. https://my-woo-store.com/wp-json/roihuntereasy/state)
