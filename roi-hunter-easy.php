@@ -55,15 +55,18 @@ function roi_hunter_easy_plugin_init() {
 	require_once( RH_EASY_DIR . 'includes/ajax.php' );
 	
 	// Admin
-	add_filter( 'woocommerce_get_settings_pages', 'roi_hunter_easy_wc_settings' );;
+	//add_filter( 'woocommerce_get_settings_pages', 'roi_hunter_easy_wc_settings' );;
+	require_once( RH_EASY_DIR . 'includes/admin/settings.php' );				
 	require_once( RH_EASY_DIR . 'includes/admin/plugin-settings-link.php' );				
 
 }
 
+/* TO REMOVE
 function roi_hunter_easy_wc_settings($settings) {
 	$settings[] = include( RH_EASY_DIR . 'includes/admin/wc-settings-tab.php' );
 	return $settings;
 }
+*/
 
 /**
  * The code that runs during plugin activation.
