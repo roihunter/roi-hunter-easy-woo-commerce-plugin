@@ -186,7 +186,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
             );       
 
         } elseif ( is_cart() ) {
-            return "rheasy_fbq(' . $this->add_to_cart_event() . ');\n";
+            return "rheasy_fbq(" . $this->add_to_cart_event() . ");\n";
         }
 
     }
