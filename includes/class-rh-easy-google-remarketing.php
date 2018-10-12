@@ -73,6 +73,16 @@ class RH_Easy_Google_Integration {
         } 
         if ( is_product() || is_product_category() || is_cart() || is_order_received_page() ) {
             $id_value = $this->get_prodid_totalvalue();
+
+            if ( is_order_received_page() ) {
+                $order = RH_Easy_Helper::get_order_thankyou();
+
+                if ( $order && ! $order->has_status( 'failed' ) ) {
+                    $id_value['value'] = RH_Easy_Helper::get_order_total( $order );
+                    $id_value['id'] = RH_Easy_Helper::get_content_ids( $order->get_items() );
+                }
+            }
+
             echo sprintf('
 <!-- Google Code for Remarketing Tag -->
 <script type="text/javascript">

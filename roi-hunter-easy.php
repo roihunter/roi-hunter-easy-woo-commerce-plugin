@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: ROI Hunter Easy
-Description: TODO
+Description: Turn visitors into customers.
 Version:     0.0.4
 Author:      Karolína Vyskočilová
 Author URI:  https://kybernaut.cz
