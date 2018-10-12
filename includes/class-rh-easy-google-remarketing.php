@@ -78,7 +78,7 @@ class RH_Easy_Google_Integration {
                 $order = RH_Easy_Helper::get_order_thankyou();
 
                 if ( $order && ! $order->has_status( 'failed' ) ) {
-                    $id_vale['value'] = RH_Easy_Helper::get_order_total( $order );
+                    $id_value['value'] = RH_Easy_Helper::get_order_total( $order );
                     $id_value['id'] = RH_Easy_Helper::get_content_ids( $order->get_items() );
                 }
             }
