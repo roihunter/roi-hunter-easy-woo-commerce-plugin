@@ -1,7 +1,6 @@
 TODO
-- debug endpoint - co posílat?
 - smazat všechny uživatele WooCommerce API při mazání pluginu
-- přesunout z WooCommerce->Nastavení do vlastního odkazu v menu (bude třeba předělat získávání nastavení)
+- rh version je třeba aby to byla normální verze
 - přidat hlášku po aktivaci
 
 LATER

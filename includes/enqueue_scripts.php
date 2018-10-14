@@ -17,17 +17,17 @@ if ( ! defined( 'WPINC' ) ) {
 add_action( 'wp_enqueue_scripts', 'plugin_slug_public_scripts' );
 function plugin_slug_public_scripts( $hook ) {     
 
-    $settings = new RH_Easy_Integration();
+    $helper = new RH_Easy_Helper;
     
     // Check for FB remarketing
-    if ( $settings->get_option('fb_pixel_id') ) {
+    if ( $helper->get_option('fb_pixel_id') ) {
         $fb_active = true;
     } else {
         $fb_active = false;
     }
     
     // Check for Google remarketing
-    if ( $settings->get_option('google_conversion_id') && $settings->get_option('google_conversion_label') ) {
+    if ( $helper->get_option('google_conversion_id') && $helper->get_option('google_conversion_label') ) {
         $gtm_active = true;
     } else {
         $gtm_active = false;

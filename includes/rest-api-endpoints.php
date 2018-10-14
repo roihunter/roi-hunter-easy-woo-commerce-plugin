@@ -386,7 +386,8 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
 
     private function check_clientToken( $token ) {
 
-        if ( $token == RH_Easy_Helper::get_client_token() ) {
+        $helper = new RH_Easy_Helper();
+        if ( $token == $helper->get_option('clientToken') ) {
             return true;
         }
 

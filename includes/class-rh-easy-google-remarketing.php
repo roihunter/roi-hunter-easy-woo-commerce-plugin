@@ -18,9 +18,9 @@ class RH_Easy_Google_Integration {
 
     function __construct() {
 
-        $settings = new RH_Easy_Integration();
-        $this->conversion_id = $settings->get_option('google_conversion_id');
-        $this->conversion_label = $settings->get_option('google_conversion_label');
+        $helper = new RH_Easy_Helper();
+        $this->conversion_id = $helper->get_option('google_conversion_id');
+        $this->conversion_label = $helper->get_option('google_conversion_label');
 
         if( $this->conversion_id && $this->conversion_label ) {
             // REMARKETING

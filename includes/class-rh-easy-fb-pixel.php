@@ -17,7 +17,8 @@ class RH_Easy_FB_Pixel {
 
     function __construct() {
 
-        $this->pixel_id = RH_Easy_Helper::get_fb_pixel_id();
+        $helper = new RH_Easy_Helper;
+        $this->pixel_id = $helper->get_option('fb_pixel_id');
 
         if( $this->pixel_id ) {
             add_action( 'wp_head', array( $this, 'inject_pixel' ) );

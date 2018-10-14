@@ -11,38 +11,7 @@ class RH_Easy_Helper {
 
     function __construct() {
         
-        if ( !class_exists('RH_Easy_Integration') ) {
-            require_once( RH_EASY_DIR . 'includes/class-rh-easy-integration.php' );
-        }
-
-        $this->settings = new RH_Easy_Integration();        
-    }
-
-    /**
-    * Get the client_token that is stored in the admin settings
-    * @return string
-    * @since  1.0.0
-    */
-    public static function get_client_token() { 
-
-        if ( !class_exists('RH_Easy_Integration') ) {
-            require_once( RH_EASY_DIR . 'includes/class-rh-easy-integration.php' );
-        }
-
-        $settings = new RH_Easy_Integration();
-        return $settings->get_option('clientToken');     
-
-    }
-
-    /**
-    * Get the fb_pixel_id that is stored in the admin settings
-    * @return string
-    * @since  1.0.0
-    */
-    public static function get_fb_pixel_id() { 
-
-        $settings = new RH_Easy_Integration();
-        return $settings->get_option('fb_pixel_id');     
+        $this->settings = get_option('roi_hunter_easy', array());
 
     }
 
@@ -51,9 +20,13 @@ class RH_Easy_Helper {
     * @return string
     * @since  1.0.0
     */
-    public function get_option( $option ) { 
+    public function get_option( $option, $default = null ) { 
 
-        return $this->settings->get_option( $option );     
+        if ( isset( $this->settings[ $option ] )) {
+            return $this->settings[ $option ];
+        } else {
+            return $default;
+        }
 
     }
 
@@ -64,12 +37,10 @@ class RH_Easy_Helper {
     * @return array
     * @since  1.0.0
     */
-    public function update_options( $options = array())  {
+    public function update_options( $new_options = array())  {
 
-        $old_options = (array) get_option( $this->settings->get_option_key() );
-        $new_options = apply_filters('woocommerce_settings_api_sanitized_fields_' . $this->settings->id, $options);
-        $updated_options = array_merge($old_options, $new_options);
-        return update_option($this->settings->get_option_key(), $updated_options);
+        $updated_options = array_merge($this->settings, $new_options);
+        return update_option( 'roi_hunter_easy', $updated_options);
 
     }  
 
@@ -169,7 +140,9 @@ class RH_Easy_Helper {
 
     function check_woocommerce_rest_api() {
         
+        global $wpdb;
         $our_woocommerce_cust_secret = $this->get_option( 'cust_secret' );
+        $found = false;
 
         // Enable WooCommerce REST API
         if ( get_option( 'woocommerce_api_enabled', 'no' ) == 'no' ) {
@@ -177,12 +150,14 @@ class RH_Easy_Helper {
         }
 
         // Check if exists
-        global $wpdb;
-        $table = $wpdb->prefix . 'woocommerce_api_keys';
-        $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $table WHERE consumer_secret = %s", $our_woocommerce_cust_secret ) );
+        if ( $our_woocommerce_cust_secret ) {
+            $table = $wpdb->prefix . 'woocommerce_api_keys';
+            $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $table WHERE consumer_secret = %s", $our_woocommerce_cust_secret ) );
+            $found = $wpdb->num_rows;
+        }
 
-        // if doesn't create a new one
-        if ( $wpdb->num_rows == 0 )  {
+        // If doesn't create a new one
+        if ( $found || empty( $our_woocommerce_cust_secret ) )  {
 
             // Create WooCommerce REST API User
             require_once( RH_EASY_DIR . 'includes/class-rh-easy-auth.php' );

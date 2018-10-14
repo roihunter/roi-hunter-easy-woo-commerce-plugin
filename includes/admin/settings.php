@@ -5,54 +5,38 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( class_exists( 'WC_Settings_RH_Easy', false ) ) {
-	return new WC_Settings_RH_Easy();
+if ( class_exists( 'WC_Settings_RH_Easy_New', false ) ) {
+	return new WC_Settings_RH_Easy_New();
 }
 
 /**
- * WC_Settings_RH_Easy.
+ * WC_Settings_RH_Easy_New.
  */
-class WC_Settings_RH_Easy extends WC_Settings_Page {
+class WC_Settings_RH_Easy_New {
 
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->id    = 'roi-hunter-easy';
-		$this->label = __( 'ROI Hunter Easy', 'roi-hunter-easy' );
-		parent::__construct();
-	}
-
-	/**
-	 * Get settings array.
-	 *
-	 * @return array
-	 */
-	public function get_settings() {
-
-		$settings = apply_filters(
-            'woocommerce_' . $this->id . '_settings', array(
-                array(
-                    'title' => __( 'ROI Hunter Easy', 'roi-hunter-easy' ),
-                    'type'  => 'title',
-                    'id'    => 'rh_easy_page_options',
-                ),
-            )
-        );
-
-		return apply_filters( 'woocommerce_get_settings_' . $this->id, $settings );
+        // Hook into the admin menu
+        add_action( 'admin_menu', array( $this, 'settings_page' ) );
     }
     
-    public function output() {
+    public function settings_page() {
+        // Add the menu item and page
+        $page_title =  __( 'ROI Hunter Easy', 'roi-hunter-easy' );
+        $menu_title =  __( 'ROI Hunter Easy', 'roi-hunter-easy' );
+        $capability = 'manage_options';
+        $slug = 'roi-hunter-easy';
+        $callback = array( $this, 'settings_page_content' );
+        $icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj4gIDxnIGZpbGw9IiNlZWUiPiAgICA8cGF0aCBkPSJNMzAzLjA1NiAxODcuMzA2YTMzLjUyNiAzMy41MjYgMCAwIDAtMTMuMDQ0LTEzLjIzNyA2MS43MTUgNjEuNzE1IDAgMCAwLTIwLjIxOS02Ljk5OGgtLjAxNmExNDguNTMyIDE0OC41MzIgMCAwIDAtMjUuNjg1LTIuMDY0Yy0xMC4wNCAwLTE5LjM1OS4zNzYtMjcuOTU4IDEuMTI4djg0LjY0OGgyMC43NjdjMTAuMjQzLjA5MSAyMC40OC0uNTQgMzAuNjM1LTEuODg3YTYzLjk3MiA2My45NzIgMCAwIDAgMjIuMTA1LTYuODA0IDMyLjk2NCAzMi45NjQgMCAwIDAgMTMuNDE0LTEzLjIzN2MzLjAyMS01LjUwNCA0LjUzMS0xMi41NTUgNC41MzEtMjEuMTU0YTQyLjA2IDQyLjA2IDAgMCAwLTQuNTMtMjAuMzk1eiIvPiAgICA8cGF0aCBkPSJNNDQwLjcwMSA3MS4zMTRsLTI1LjEwNyAyNS4xMDdDMzIwLjc1OCA0LjA2OCAxNjkuMzY3IDQuMzgyIDc0LjkzIDk3LjM4NmMtOTUuODAzIDk0LjM0OS05Ni45ODEgMjQ4LjQ5Ny0yLjYzMiAzNDQuM2wyNS4wODQtMjUuMDg0Yzk1LjE1NyA5NC4wOTYgMjQ4LjU2OCA5My43OCAzNDMuMzE5LS45NzEgOTUuMDgxLTk1LjA4MSA5NS4wODEtMjQ5LjIzNiAwLTM0NC4zMTd6TTMyMC4wNjcgMzg4LjM1YTU0OS4zNTEgNTQ5LjM1MSAwIDAgMC0xNS40OTUtMjcuNDEgODkxLjU0NSA4OTEuNTQ1IDAgMCAwLTE2LjgxNi0yNi44M2MtNS42NTQtOC43MDYtMTEuMjYtMTYuODk2LTE2LjgxNi0yNC41NzEtNS41NTgtNy42NzUtMTAuNzIzLTE0LjUzOC0xNS40OTUtMjAuNTktMy41MzEuMjQxLTYuNTYzLjM4Ny05LjA3Ny4zODdoLTMwLjI5NnY5OC45OThoLTQ3LjYyOVYxMzAuMjQ1YTI1NS45OTkgMjU1Ljk5OSAwIDAgMSAzNy4wODQtNS4wOTVsLS4wNDktLjAxN2MxMy4xMDQtLjg5MiAyNC44MTktMS4zMzggMzUuMTQ5LTEuMzM4IDM3Ljc4Mi4wMTEgNjYuNjkxIDYuOTQ0IDg2LjcyOCAyMC43OTkgMjAuMDM2IDEzLjg1NSAzMC4wNTUgMzUuMDE1IDMwLjA1NSA2My40NzgtLjAxMSAzNS41MjUtMTcuNTIxIDU5LjU5My01Mi41MyA3Mi4yIDQuNzk0IDUuNzUxIDEwLjIxMSAxMi44MDMgMTYuMjUyIDIxLjE1NHMxMi4yMTEgMTcuMzY1IDE4LjUxIDI3LjAzOWE1ODQuOTYyIDU4NC45NjIgMCAwIDEgMTguMTM5IDI5Ljg0NWM1Ljc5NCAxMC4yIDEwLjk1OSAyMC4yMTQgMTUuNDk1IDMwLjAzOGgtNTMuMjA5eiIvPiAgPC9nPjwvc3ZnPg==';
+        $position = 100;
+    
+        add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position );                     
+    }
 
-        // hide save button
-        global $hide_save_button;        
-        $hide_save_button = true;
-
-        //get settings
-        $settings = $this->get_settings();
-        WC_Admin_Settings::output_fields( $settings );
-
+    public function settings_page_content() {
+        
         $location = wc_get_base_location();
         $language = substr( get_bloginfo ( 'language' ), 0, 2 );
         $helper = new RH_Easy_Helper();
@@ -113,10 +97,9 @@ class WC_Settings_RH_Easy extends WC_Settings_Page {
         <iframe src="https://goostav-fe-staging.roihunter.com/" id="RoiHunterEasyIFrame" scrolling="yes" frameBorder="0" allowfullscreen="true" align="center" onload="iFrameLoad()" style="width: 100%; min-height: 500px"><p><?php _e('Your browser does not support iFrames.', 'roi-hunter-easy'); ?></p></iframe>
 
 
-        <?php        
-
-	}
+        <?php 
+    }
 
 }
 
-return new WC_Settings_RH_Easy();
+return new WC_Settings_RH_Easy_New();
