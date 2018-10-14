@@ -31,6 +31,20 @@ class RH_Easy_Helper {
     }
 
     /**
+    * Remove an option stored in the admin settings
+    * @return string
+    * @since  1.0.0
+    */
+    public function delete_option( $option ) { 
+
+        if ( isset( $this->settings[ $option ] )) {
+            unset( $this->settings[ $option ] );
+            update_option( 'roi_hunter_easy', $this->settings);
+        }
+
+    }
+
+    /**
     * Save an array of options
     *
     * @param array $new_options
