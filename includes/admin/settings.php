@@ -94,7 +94,7 @@ class WC_Settings_RH_Easy_New {
                 }, false);
             }
         </script>
-        <iframe src="//goostav-fe-staging.roihunter.com/" id="RoiHunterEasyIFrame" scrolling="yes" frameBorder="0" allowfullscreen="true" align="center" onload="iFrameLoad()" style="width: 100%; min-height: 500px"><p><?php _e('Your browser does not support iFrames.', 'roi-hunter-easy'); ?></p></iframe>
+        <iframe src="https://goostav-fe-staging.roihunter.com/" id="RoiHunterEasyIFrame" scrolling="yes" frameBorder="0" allowfullscreen="true" align="center" onload="iFrameLoad()" style="width: 100%; min-height: 500px"><p><?php _e('Your browser does not support iFrames.', 'roi-hunter-easy'); ?></p></iframe>
 
 
         <?php 

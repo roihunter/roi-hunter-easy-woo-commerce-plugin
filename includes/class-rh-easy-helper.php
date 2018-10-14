@@ -99,7 +99,7 @@ class RH_Easy_Helper {
      * Grab the content IDS from different arrays, for each item in cart/order return one ID
      * 
      * @param array $items
-     * @return string $ids in format [id,id,id]
+     * @return array $ids
      * @since 1.0.0
      */
     public static function get_content_ids( $items ) {
@@ -135,7 +135,7 @@ class RH_Easy_Helper {
             
         }
 
-        return $product_ids;
+        return array_unique($product_ids);
     }
 
     function check_woocommerce_rest_api() {
