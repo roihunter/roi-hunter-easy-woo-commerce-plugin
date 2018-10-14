@@ -138,7 +138,7 @@ class RH_Easy_Helper {
         return array_unique($product_ids);
     }
 
-    function check_woocommerce_rest_api() {
+    public function check_woocommerce_rest_api() {
         
         global $wpdb;
         $our_woocommerce_cust_secret = $this->get_option( 'cust_secret' );
@@ -177,7 +177,17 @@ class RH_Easy_Helper {
 
         }
 
-
     }
+
+    /**
+     * Delete all "Roi Hunter Easy - API" keys
+     *
+     * @return void
+     * @since 0.0.5
+     */
+    public static function delete_all_our_keys() {
+        global $wpdb;
+        $wpdb->query( $wpdb->prepare( 'DELETE FROM `' . $wpdb->prefix . 'woocommerce_api_keys` WHERE `description` LIKE "%s"', '%Roi Hunter Easy - API%' ));				
+    }   
 
 }

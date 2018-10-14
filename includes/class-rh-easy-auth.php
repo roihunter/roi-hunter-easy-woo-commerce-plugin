@@ -41,17 +41,6 @@ if ( class_exists('WC_Auth') ) {
 			global $wpdb;
 			$wpdb->delete( $wpdb->prefix . 'woocommerce_api_keys', array( 'key_id' => $key_id ), array( '%d' ) );
 		}
-
-		/**
-		 * Delete all "Roi Hunter Easy - API" keys
-		 *
-		 * @return void
-		 * @since 0.0.5
-		 */
-		public static function delete_all_our_keys() {
-			global $wpdb;
-			$wpdb->query( $wpdb->prepare( 'DELETE FROM `' . $wpdb->prefix . 'woocommerce_api_keys` WHERE `description` LIKE "%s"', '%Roi Hunter Easy - API%' ));				
-		}
 		
 	}
 	
