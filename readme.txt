@@ -29,6 +29,10 @@ TODO
 
 == Changelog ==
 
+= 0.0.5 =
+* Move settings to get_option() instead of using WC_Settings Class and show it directly in the menu
+* Fix RH_EASY_VERSION format 
+
 = 0.0.4 =
 * google-tracking + fb-tracking API jako DELETE
 * zabezpečení všech endpointů kromě check pomocí parametru clientToken

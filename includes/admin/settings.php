@@ -53,7 +53,7 @@ class WC_Settings_RH_Easy_New {
             'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
             'storeLanguage' => $language, // Primary language of the store
             'storeCountry' => $location['country'], // Primary target country of the store
-            'pluginVersion' => RH_EASY_VERSION,
+            'pluginVersion' => 'woo-commerce_' . RH_EASY_VERSION,
             'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
             'customerId' => $helper->get_option( 'customer_id' ), // RH Easy customer ID
             'accessToken' => $helper->get_option( 'access_token' ), // RH Easy access token
