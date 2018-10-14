@@ -5,11 +5,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// inclueded required Classes
+// Include Helper class
 require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
 $helper = new RH_Easy_Helper();
 
-// Remove unused WC API keys
+// If cleanup allowed
 if( $helper->get_option['cleanup'] !== false ) {
 	
 	// Remove all our possible API keys
