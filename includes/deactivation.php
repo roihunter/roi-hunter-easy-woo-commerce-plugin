@@ -6,6 +6,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // TODO move to deactivation?
+// TODO fix deactivation
 
 $options = get_option( 'woocommerce_roi_hunter_easy_settings', true );
 
@@ -16,7 +17,6 @@ if( isset( $options['cleanup'] ) && 'yes' == $options['cleanup'] ) {
 	if ( class_exists('WooCommerce') ) {
 		
 		require_once( RH_EASY_DIR . 'includes/class-rh-easy-auth.php' );
-		require_once( RH_EASY_DIR . 'includes/class-rh-easy-integration.php' );
 		require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
 		
 		// TODO dostat všechny, které potenciálně mohou být naše z DB

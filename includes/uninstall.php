@@ -17,9 +17,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// If uninstall not called from WordPress, then exit.
-if ( ! defined( 'WP_UNINSTALL_RH_EASY' ) ) {
-	exit;
-}
+// inclueded required Classes
+require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
+$helper = new RH_Easy_Helper();
 
-// smazat post meta z orders "rh_easy_tracking_fb" a "rh_easy_tracking_gtm"
+if ( $helper->get_option['cleanup'] !== false ) {
+	delete_option( 'roi_hunter_easy' ); // remove settings
+	// TODO smazat post meta z orders "rh_easy_tracking_fb" a "rh_easy_tracking_gtm"
+}

@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function roi_hunter_easy_plugin_action_links( $links ) {
 	$action_links = array(
-		'settings' => '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=roi-hunter-easy' ) . '" aria-label="' . esc_attr__( 'View settings', 'roi-hunter-easy' ) . '">' . esc_html__( 'Settings', 'roi-hunter-easy' ) . '</a>',
+		'settings' => '<a href="' . admin_url( 'admin.php?page=roi-hunter-easy' ) . '" aria-label="' . esc_attr__( 'View settings', 'roi-hunter-easy' ) . '">' . esc_html__( 'Settings', 'roi-hunter-easy' ) . '</a>',
 	);
 
 	return array_merge( $action_links, $links );
