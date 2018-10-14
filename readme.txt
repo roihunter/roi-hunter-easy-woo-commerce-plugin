@@ -2,7 +2,7 @@
 Contributors: vyskoczilova
 Tags: woocommerce
 Requires at least: 4.6
-Tested up to: 4.9.6
+Tested up to: 4.9.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,15 +17,20 @@ TODO
 
 === Requirements ===
 - WooCommerce 3.4 and newer
-- Enabled REST API - enabled permalinks, enabled WC REST API & Generated keys, see (WC docs)[https://docs.woocommerce.com/document/woocommerce-rest-api/]
+- Enabled pretty permalinks (required for WooCommerce REST API)
 
 == Installation ==
 
-1. Upload the plugin to your web site or install via plugin management.
-1. Check whether the WooCommerce plugin is installed and active.
-1. Activate the plugin through the `Plugins` menu in WordPress administration
-1. Fill the necessary settings in `WooCommerce > Settings > ROI Hunter Easy`.
-1. Done!
+=== 1. Install the plugin === 
+
+The latest versions are always available in the WordPress Repository, and you can choose one of your favorite ways to install it: 
+* automatically using [built-in plugin installer](https://codex.wordpress.org/Managing_Plugins#Automatic_Plugin_Installation) (recommended)
+* manually by [uploading a zip archive](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation_by_FTP)
+* manually by [FTP](https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation_by_Uploading_a_Zip_Archive)
+
+=== 2. Complete the setup ===
+
+After the installation, continue by click to `ROI Hunter Easy` menu item and follow the instructions in our Sign Up wizard.
 
 == Changelog ==
 
