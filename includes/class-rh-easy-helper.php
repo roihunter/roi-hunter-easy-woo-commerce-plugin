@@ -156,7 +156,7 @@ class RH_Easy_Helper {
         
         global $wpdb;
         $our_woocommerce_cust_secret = $this->get_option( 'cust_secret' );
-        $found = false;
+        $found = 0;
 
         // Enable WooCommerce REST API
         if ( get_option( 'woocommerce_api_enabled', 'no' ) == 'no' ) {
@@ -171,7 +171,7 @@ class RH_Easy_Helper {
         }
 
         // If doesn't create a new one
-        if ( $found || empty( $our_woocommerce_cust_secret ) )  {
+        if ( $found == 0 || empty( $our_woocommerce_cust_secret ) )  {
 
             // Create WooCommerce REST API User
             require_once( RH_EASY_DIR . 'includes/class-rh-easy-auth.php' );
