@@ -1,15 +1,13 @@
 <?php
-/**
- * WooCommerce Snappic Auth
- *
- * Workaround to call parent protected method
- *
- * @since    1.0.0
- */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Workaround to call parent protected method, inspired by Snappic Auth solution
+ *
+ * @since    1.0.0
+ */
 if ( class_exists('WC_Auth') ) {
 
 	class RH_Easy_Auth extends WC_Auth {

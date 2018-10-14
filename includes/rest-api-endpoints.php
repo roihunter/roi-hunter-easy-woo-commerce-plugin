@@ -365,7 +365,6 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
     private function allowed_setting_fields( $client_token = false ) {
 
         $fields = array(
-            //'id' => array( 'type' => 'number' ),
             'customer_id' => array( 'type' => 'number' ),
             'access_token' => array( 'type' => 'string' ),
             'google_conversion_id' => array( 'type' => 'number' ),
