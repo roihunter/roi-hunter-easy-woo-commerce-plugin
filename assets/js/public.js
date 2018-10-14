@@ -14,9 +14,9 @@ jQuery(document).ready(function($){
 
                 if( data['fb'] ) {
                     rheasy_fbq( data['fb'][0], data['fb'][1], data['fb'][2] );
-                    console.log( data['fb'][0]);
-                    console.log( data['fb'][1]); 
-                    console.log( data['fb'][2]); 
+                    //console.log( data['fb'][0]);
+                    //console.log( data['fb'][1]); 
+                    //console.log( data['fb'][2]); 
                 }
 
                 // // https://stackoverflow.com/questions/5085132/inserting-google-adwords-conversion-tracking-with-javascript-or-jquery
@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 
                     $.getScript( "//www.googleadservices.com/pagead/conversion.js" );
 
-                    console.log(data['gtm']);
+                    //console.log(data['gtm']);
 
                 }
 
