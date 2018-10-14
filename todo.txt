@@ -1,7 +1,0 @@
-TODO
-- smazat všechny uživatele WooCommerce API při mazání pluginu
-- rh version je třeba aby to byla normální verze
-- přidat hlášku po aktivaci
-
-LATER
-- statistiky z pluginu rovnou na dashboard

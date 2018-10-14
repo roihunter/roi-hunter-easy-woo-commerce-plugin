@@ -5,26 +5,19 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// TODO move to deactivation?
-// TODO fix deactivation
+// Include Helper class
+require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
+$helper = new RH_Easy_Helper();
 
-$options = get_option( 'woocommerce_roi_hunter_easy_settings', true );
-
-// delete options and api key
-if( isset( $options['cleanup'] ) && 'yes' == $options['cleanup'] ) {
+// If cleanup allowed
+if( $helper->get_option['cleanup'] !== false ) {
 	
-	// Delete the API key if WC is running TODO možná nějak předělat
-	if ( class_exists('WooCommerce') ) {
-		
-		require_once( RH_EASY_DIR . 'includes/class-rh-easy-auth.php' );
-		require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
-		
-		// TODO dostat všechny, které potenciálně mohou být naše z DB
-		if( isset( $options['key_id'] ) && 0 < $options['key_id'] ) {
-			RH_Easy_Auth::delete_key( $options['key_id'] );
-		}
+	// Remove all our possible API keys
+	$helper->delete_all_our_keys();
 
-	}
+	// Remove API key from our options
+	$helper->delete_option( 'key_id' );
+	$helper->delete_option( 'cust_secret' );
+	$helper->delete_option( 'cust_key' );
 
-	delete_option( 'woocommerce_roi_hunter_easy_settings' );
 }

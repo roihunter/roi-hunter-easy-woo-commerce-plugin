@@ -31,6 +31,20 @@ class RH_Easy_Helper {
     }
 
     /**
+    * Remove an option stored in the admin settings
+    * @return string
+    * @since  1.0.0
+    */
+    public function delete_option( $option ) { 
+
+        if ( isset( $this->settings[ $option ] )) {
+            unset( $this->settings[ $option ] );
+            update_option( 'roi_hunter_easy', $this->settings);
+        }
+
+    }
+
+    /**
     * Save an array of options
     *
     * @param array $new_options
@@ -138,11 +152,11 @@ class RH_Easy_Helper {
         return array_unique($product_ids);
     }
 
-    function check_woocommerce_rest_api() {
+    public function check_woocommerce_rest_api() {
         
         global $wpdb;
         $our_woocommerce_cust_secret = $this->get_option( 'cust_secret' );
-        $found = false;
+        $found = 0;
 
         // Enable WooCommerce REST API
         if ( get_option( 'woocommerce_api_enabled', 'no' ) == 'no' ) {
@@ -157,7 +171,7 @@ class RH_Easy_Helper {
         }
 
         // If doesn't create a new one
-        if ( $found || empty( $our_woocommerce_cust_secret ) )  {
+        if ( $found == 0 || empty( $our_woocommerce_cust_secret ) )  {
 
             // Create WooCommerce REST API User
             require_once( RH_EASY_DIR . 'includes/class-rh-easy-auth.php' );
@@ -177,7 +191,17 @@ class RH_Easy_Helper {
 
         }
 
-
     }
+
+    /**
+     * Delete all "Roi Hunter Easy - API" keys
+     *
+     * @return void
+     * @since 0.0.5
+     */
+    public static function delete_all_our_keys() {
+        global $wpdb;
+        $wpdb->query( $wpdb->prepare( 'DELETE FROM `' . $wpdb->prefix . 'woocommerce_api_keys` WHERE `description` LIKE "%s"', '%Roi Hunter Easy - API%' ));				
+    }   
 
 }
