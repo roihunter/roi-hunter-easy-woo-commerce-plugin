@@ -53,7 +53,8 @@ class RH_Easy_Helper {
     */
     public function update_options( $new_options = array())  {
 
-        $updated_options = array_merge($this->settings, $new_options);
+        $settings = get_option('roi_hunter_easy', array());
+        $updated_options = array_merge($settings, $new_options);
         return update_option( 'roi_hunter_easy', $updated_options);
 
     }  

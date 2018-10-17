@@ -13,16 +13,16 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die;
 }
 
 // Include Helper class
-require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'includes/class-rh-easy-helper.php' );
 $helper = new RH_Easy_Helper();
 
 // If cleanup allowed
-if ( $helper->get_option['cleanup'] !== false ) {
+if ( $helper->get_option('cleanup') !== false ) {
 	delete_option( 'roi_hunter_easy' ); // remove all the settings
 	// TODO smazat post meta z orders "rh_easy_tracking_fb" a "rh_easy_tracking_gtm"
 }

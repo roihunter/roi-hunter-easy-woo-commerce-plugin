@@ -34,6 +34,10 @@ After the installation, continue by click to `ROI Hunter Easy` menu item and fol
 
 == Changelog ==
 
+= 0.0.6 =
+* fix cleanup issues
+* staging gulp
+
 = 0.0.5 =
 * Move settings to get_option() instead of using WC_Settings Class and show it directly in the menu
 * Fix RH_EASY_VERSION format 
