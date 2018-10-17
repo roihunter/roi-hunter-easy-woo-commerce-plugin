@@ -11,10 +11,12 @@ var notify = require('gulp-notify'); // Sends message notification to you
 var wpPot = require('gulp-wp-pot'); // For generating the .pot file.
 var sort = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
 var zip = require('gulp-zip');
+var replace = require('gulp-replace');
 
 // Settings
 var wpTheme = "./";
 var plugin_name = 'roi-hunter-easy';
+var zip_files = ['./**/*', '!node_modules/**/*','!.vscode/**/*', '!node_modules', '!gulpfile.js', '!.gitignore', '!package.json', '!*.zip', '!todo.txt', '!readme.md'];
 
 // Translation related.
 var text_domain             = 'roi-hunter-easy'; // Your textdomain here.
@@ -85,10 +87,18 @@ gulp.task( "js", function() {
 /**
  * Generate plugin instalable zip
  */
-
+// activeBeProfile = production
 gulp.task('zip', function() {
-    gulp.src(['./**/*', '!node_modules/**/*','!.vscode/**/*', '!node_modules', '!gulpfile.js', '!.gitignore', '!package.json', '!*.zip', '!todo.txt'])
+    gulp.src( zip_files )
         .pipe(zip( plugin_name + '.zip' ))
+        .pipe(gulp.dest('.'))
+    }
+);
+// activeBeProfile = staging
+gulp.task('zip-staging', function() {
+    gulp.src( zip_files )
+        .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
+        .pipe(zip( plugin_name + '_staging.zip' ))
         .pipe(gulp.dest('.'))
     }
 );
