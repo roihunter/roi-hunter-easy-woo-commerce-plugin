@@ -24,7 +24,7 @@ Conversion ID: 123456789
   });
   
   // Category
-  gtag('event', 'view_item', {
+  gtag('event', 'view_item_list', {
     send_to: 'AW-123456789',
     dynx_itemid: [123, 456],
     dynx_pagetype: 'searchresults',
