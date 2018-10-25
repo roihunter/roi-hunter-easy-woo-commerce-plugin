@@ -1,8 +1,8 @@
 <?php
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die;
 }
 
 /**
@@ -11,128 +11,132 @@ if ( ! defined( 'WPINC' ) ) {
  * http://google.com/ads/remarketingsetup
  * https://developers.google.com/tag-manager/devguide#adding-data-layer-variables-for-devices-without-javascript-support
  */
-
-class RH_Easy_Google_Integration {
+class RH_Easy_Google_Integration
+{
 
     private $conversion_id, $conversion_label;
 
-    function __construct() {
+    function __construct()
+    {
 
         $helper = new RH_Easy_Helper();
         $this->conversion_id = $helper->get_option('google_conversion_id');
         $this->conversion_label = $helper->get_option('google_conversion_label');
 
-        if( $this->conversion_id && $this->conversion_label ) {
+        if ($this->conversion_id && $this->conversion_label) {
             // REMARKETING
-            add_action( 'wp_footer', array( $this, 'inject_remarketing' ) );
+            add_action('wp_footer', array($this, 'inject_remarketing'));
             //woocommerce_add_to_cart
         }
 
     }
 
-    public function inject_remarketing() {
+    public function inject_remarketing()
+    {
+        echo sprintf('
+                <!-- ROI Hunter Easy Global Site Tag (gtag.js) - Google AdWords: %1$s -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-%1$s"></script>
+            ', esc_js($this->conversion_id));
 
-        if ( is_order_received_page() ) {
-            
-            $order = RH_Easy_Helper::get_order_thankyou();            
+        if (is_order_received_page()) {
+            $order = RH_Easy_Helper::get_order_thankyou();
 
             // Check order integrity and if code was already fired
-            if ( $order && ! $order->has_status( 'failed' ) && ! get_post_meta( $order->get_id(), 'rh_easy_tracking_gtm', true ) ) {
+            if ($order && !$order->has_status('failed') && !get_post_meta($order->get_id(), 'rh_easy_tracking_gtm', true)) {
+                $id_value = $this->get_prodid_totalvalue();
                 echo sprintf('
-<!-- Google Code for Purchase Conversion Page -->            
-<script type="text/javascript"> 
-    /* <![CDATA[ */
-    var google_conversion_id = %1$d;
-    var google_conversion_order_id = %2$d;
-    var google_conversion_label = "%3$s";
-    var google_conversion_language = "en_US";
-    var google_conversion_format = "1";
-    var google_conversion_color = "666666";
-    var google_conversion_currency = "%4$s";
-    var google_conversion_value = %5$f;
-    var google_remarketing_only = "false"    
-    /* ]]> */ 
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
-<noscript>
-    <img height=1 width=1 border=0 src="//www.googleadservices.com/pagead/conversion/%1$d/?order_id=%2$d&amp;label=%3$s&amp;language=en_US&amp;format=1&amp;color=666666&amp;currency_code=%4$s&amp;value=%5$f&amp;guid=ON&amp;script=0">    
-</noscript>
-<!-- END Google Code for Purchase Conversion Page -->
+                        <script>
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag("js", new Date());
+                        
+                            gtag("config", "AW-%1$s");
+                            gtag("event", "purchase", {
+                                send_to: "AW-%1$s",
+                                value: %2$f,
+                                currency: "%3$s",
+                                transaction_id: "%4$s",
+                                dynx_itemid: "%5$s",
+                                dynx_pagetype: "conversion",
+                                dynx_totalvalue: %2$f
+                            });
+                        </script>
                 ',
-                esc_js( $this->conversion_id ),
-                $order->get_id(),
-                esc_js( $this->conversion_label ),
-                $order->get_currency(),
-                RH_Easy_Helper::get_order_total( $order )
+                    esc_js($this->conversion_id + "/" + $this->conversion_label ),
+                    $id_value['value'],
+                    $order->get_currency(),
+                    $order->get_id(),
+                    json_encode($id_value['id'])
                 );
+
+                // Save a post meta preventing multiple tracking
+                add_post_meta($order->get_id(), 'rh_easy_tracking_gtm', '1', true);
             }
-
-            // Save a post meta preventing multiple tracking
-            add_post_meta( $order->get_id(), 'rh_easy_tracking_gtm', '1', true );
-
-        } 
-        if ( is_product() || is_product_category() || is_cart() || is_order_received_page() ) {
+        } else if (is_product() || is_product_category() || is_cart()) {
             $id_value = $this->get_prodid_totalvalue();
 
-            if ( is_order_received_page() ) {
-                $order = RH_Easy_Helper::get_order_thankyou();
-
-                if ( $order && ! $order->has_status( 'failed' ) ) {
-                    $id_value['value'] = RH_Easy_Helper::get_order_total( $order );
-                    $id_value['id'] = RH_Easy_Helper::get_content_ids( $order->get_items() );
-                }
-            }
-
             echo sprintf('
-<!-- Google Code for Remarketing Tag -->
-<script type="text/javascript">
-    /* <![CDATA[ */
-    var google_conversion_id = %1$d;
-    var google_custom_params = {
-        ecomm_prodid: %3$s,
-        ecomm_pagetype: "%2$s",
-        ecomm_totalvalue: %4$f,
-    };
-    var google_remarketing_only = true;
-    /* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/%1$d/?value=0&amp;guid=ON&amp;script=0"/>
-    </div>
-</noscript>
+                        <script>
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag("js", new Date());
+                        
+                            gtag("config", "AW-%1$s");
+                            gtag("event", "%2$s", {
+                                send_to: "AW-%1$s",
+                                dynx_itemid: "%3$s",
+                                dynx_pagetype: "%4$s",
+                                dynx_totalvalue: %5$f
+                            });
+                        </script>
             ',
-            esc_js( $this->conversion_id ),
-            $this->get_pagetype(),
-            json_encode( $id_value['id'] ),
-            $id_value['value']
+                esc_js($this->conversion_id),
+                $this->get_gtag_event(),
+                json_encode($id_value['id']),
+                $this->get_dynx_pagetype(),
+                $id_value['value']
             );
-            
+
         }
 
     }
 
-    public function add_to_cart_event() {
+    public function add_to_cart_event()
+    {
         $id_value = $this->get_prodid_totalvalue();
         return array(
-            'conversion_id' => esc_js( $this->conversion_id ),
-            'prodid' => json_encode( $id_value['id'] ),
+            'conversion_id' => esc_js($this->conversion_id),
+            'prodid' => json_encode($id_value['id']),
             'totalvalue' => $id_value['value'],
         );
     }
 
-    private function get_pagetype() {
-        
-        if ( is_product() ) {
-            return 'product';
-        } elseif ( is_product_category() ) {
-            return 'category';
-        } elseif ( is_cart() ) {
-            return 'cart';
-        } elseif ( is_order_received_page() ) {
-            return 'purchase';
+    private function get_dynx_pagetype()
+    {
+
+        if (is_product()) {
+            return 'offerdetail'; // product
+        } elseif (is_product_category()) {
+            return 'searchresults'; // category
+        } elseif (is_cart()) {
+            return 'conversionintent'; // cart
+        } elseif (is_order_received_page()) {
+            return 'conversion'; // purchase
+        }
+
+    }
+
+    private function get_gtag_event()
+    {
+
+        if (is_product()) {
+            return 'view_item'; // product
+        } elseif (is_product_category()) {
+            return 'view_item_list'; // category
+        } elseif (is_cart()) {
+            return 'add_to_cart'; // cart
+        } elseif (is_order_received_page()) {
+            return 'purchase'; // purchase
         }
 
     }
@@ -143,50 +147,48 @@ class RH_Easy_Google_Integration {
      * @return array ['id']
      * @since 1.0.0
      */
-    private function get_prodid_totalvalue() {
+    private function get_prodid_totalvalue()
+    {
 
         $values = array(
             'id' => 0,
             'value' => 0
         );
-        
-        if ( is_product() ) {
-            
+
+        if (is_product()) {
+
             $product = wc_get_product(get_the_ID());
             if (!$product) {
                 return;
             }
-            
-            $values = array( 
-                'id' => $product->get_id(), 
-                'value' => wc_get_price_including_tax( $product ) 
-            );            
 
-        } elseif ( is_product_category() ) {
-            
-            global $posts;
-            $values = array( 
-                'id' => RH_Easy_Helper::get_content_ids( $posts )
+            $values = array(
+                'id' => $product->get_id(),
+                'value' => wc_get_price_including_tax($product)
             );
 
-            
+        } elseif (is_product_category()) {
+
+            global $posts;
+            $values = array(
+                'id' => RH_Easy_Helper::get_content_ids($posts)
+            );
+
+        } elseif (is_order_received_page()) {
             $order = RH_Easy_Helper::get_order_thankyou();
-            
-            
-        } elseif ( is_order_received_page() ) {
-            if ( $order && ! $order->has_status( 'failed' ) ) {
-                $values = array( 
-                    'id' => RH_Easy_Helper::get_content_ids( $order->get_items() ), 
-                    'value' => RH_Easy_Helper::get_order_total( $order ) 
+            if ($order && !$order->has_status('failed')) {
+                $values = array(
+                    'id' => RH_Easy_Helper::get_content_ids($order->get_items()),
+                    'value' => RH_Easy_Helper::get_order_total($order)
                 );
             }
-            
-        // Cart or Ajax call
+
+            // Cart or Ajax call
         } else {
-            
-            $values = array( 
-                'id' => RH_Easy_Helper::get_content_ids( WC()->cart->get_cart() ), 
-                'value' => WC()->cart->subtotal 
+
+            $values = array(
+                'id' => RH_Easy_Helper::get_content_ids(WC()->cart->get_cart()),
+                'value' => WC()->cart->subtotal
             );
         }
 
@@ -195,4 +197,5 @@ class RH_Easy_Google_Integration {
     }
 
 }
+
 new RH_Easy_Google_Integration();
