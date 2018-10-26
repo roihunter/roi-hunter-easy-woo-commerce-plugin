@@ -106,8 +106,8 @@ class RH_Easy_Google_Integration
         $id_value = $this->get_prodid_totalvalue();
         return array(
             'conversion_id' => esc_js($this->conversion_id),
-            'prodid' => json_encode($id_value['id']),
-            'totalvalue' => $id_value['value'],
+            'prodid' => $id_value['id'],
+            'totalvalue' => $id_value['value']
         );
     }
 
