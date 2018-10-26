@@ -23,14 +23,20 @@ jQuery(document).ready(function($){
                 if ( data['gtm'] ) {
                     
                     var google_conversion_id = data['gtm'].conversion_id;
-                    var google_custom_params = {
-                        ecomm_prodid: data['gtm'].prodid,
-                        ecomm_pagetype: "cart",
-                        ecomm_totalvalue: data['gtm'].totalvalue,
-                    };
-                    var google_remarketing_only = true;
 
-                    $.getScript( "//www.googleadservices.com/pagead/conversion.js" );
+                    $.getScript( "//www.googletagmanager.com/gtag/js?id=AW-" + google_conversion_id, function() {
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', google_conversion_id);
+
+                        gtag('event', 'add_to_cart', {
+                            send_to: 'AW-' + google_conversion_id,
+                            dynx_itemid: data['gtm'].prodid,
+                            dynx_pagetype: "conversionintent",
+                            dynx_totalvalue: data['gtm'].totalvalue,
+                        });
+                    });
 
                     //console.log(data['gtm']);
 
