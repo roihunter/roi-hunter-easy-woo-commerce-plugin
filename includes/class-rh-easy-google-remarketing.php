@@ -162,6 +162,17 @@ class RH_Easy_Google_Integration
                 return;
             }
 
+            if ($product->is_type('variable')) {
+                $variationIds = $product->get_children();
+
+                if (!empty($variationIds)) { // Return the first variation ID
+                    return array(
+                        'id' => reset($variationIds),
+                        'value' => wc_get_price_including_tax($product)
+                    );
+                }
+            }
+
             $values = array(
                 'id' => $product->get_id(),
                 'value' => wc_get_price_including_tax($product)
