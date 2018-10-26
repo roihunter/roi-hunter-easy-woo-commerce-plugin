@@ -56,13 +56,13 @@ class RH_Easy_Google_Integration
                                 value: %2$f,
                                 currency: "%3$s",
                                 transaction_id: "%4$s",
-                                dynx_itemid: "%5$s",
+                                dynx_itemid: %5$s,
                                 dynx_pagetype: "conversion",
                                 dynx_totalvalue: %2$f
                             });
                         </script>
                 ',
-                    esc_js($this->conversion_id + "/" + $this->conversion_label ),
+                    esc_js($this->conversion_id . "/" . $this->conversion_label ),
                     $id_value['value'],
                     $order->get_currency(),
                     $order->get_id(),
@@ -84,7 +84,7 @@ class RH_Easy_Google_Integration
                             gtag("config", "AW-%1$s");
                             gtag("event", "%2$s", {
                                 send_to: "AW-%1$s",
-                                dynx_itemid: "%3$s",
+                                dynx_itemid: %3$s,
                                 dynx_pagetype: "%4$s",
                                 dynx_totalvalue: %5$f
                             });
