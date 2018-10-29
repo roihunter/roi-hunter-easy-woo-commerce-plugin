@@ -61,6 +61,7 @@ class WC_Settings_RH_Easy_New {
             'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
             'wooCommerceApiKey' => $helper->get_option('cust_key'),
             'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
+            'rhEasyIFrameUrl' => 'https://magento.roihunter.com/'
         ));        
 
         //rhe_debug( $iframe );
@@ -94,7 +95,7 @@ class WC_Settings_RH_Easy_New {
                 }, false);
             }
         </script>
-        <iframe src="https://goostav-fe-staging.roihunter.com/" id="RoiHunterEasyIFrame" scrolling="yes" frameBorder="0" allowfullscreen="true" align="center" onload="iFrameLoad()" style="width: 100%; min-height: 500px"><p><?php _e('Your browser does not support iFrames.', 'roi-hunter-easy'); ?></p></iframe>
+        <iframe src="<?php echo $iframe['rhEasyIFrameUrl']; ?>" id="RoiHunterEasyIFrame" scrolling="yes" frameBorder="0" allowfullscreen="true" align="center" onload="iFrameLoad()" style="width: 100%; min-height: 500px"><p><?php _e('Your browser does not support iFrames.', 'roi-hunter-easy'); ?></p></iframe>
 
 
         <?php 
