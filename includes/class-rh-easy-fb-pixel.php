@@ -197,6 +197,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
         $params = array(    
             'content_type' => 'product',
             'currency' => get_woocommerce_currency(),
+            'owner' => 'rh_easy',
         );
         
         if ( is_product() ) {
