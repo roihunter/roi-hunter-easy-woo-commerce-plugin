@@ -100,6 +100,7 @@ gulp.task('zip-staging', function() {
     gulp.start('js');
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
+        .pipe(replace("'rhEasyIFrameUrl' => 'https://magento.roihunter.com/'", "'rhEasyIFrameUrl' => 'https://goostav-fe-staging.roihunter.com/'"))
         .pipe(zip( plugin_name + '_staging.zip' ))
         .pipe(gulp.dest('.'))
     }
