@@ -205,9 +205,20 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
             if (!$product) {
                 return;
             }
-            
+
+            if ($product->is_type('variable')) {
+                $variationIds = $product->get_children();
+
+                if (!empty($variationIds)) { // Return the first variation ID
+                    $params['content_ids'] = array( reset($variationIds) );
+                }
+            }
+
+            if (!isset($params['content_ids'])) {
+                $params['content_ids'] = array( $product->get_id() );
+            }
+
             $params['content_name'] = $product->get_title();
-            $params['content_ids'] = array( $product->get_id() ); 
             $params['value'] = wc_get_price_including_tax( $product );
             
             

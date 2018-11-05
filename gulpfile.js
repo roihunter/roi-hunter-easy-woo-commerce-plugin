@@ -89,6 +89,7 @@ gulp.task( "js", function() {
  */
 // activeBeProfile = production
 gulp.task('zip', function() {
+    gulp.start('js');
     gulp.src( zip_files )
         .pipe(zip( plugin_name + '.zip' ))
         .pipe(gulp.dest('.'))
@@ -96,6 +97,7 @@ gulp.task('zip', function() {
 );
 // activeBeProfile = staging
 gulp.task('zip-staging', function() {
+    gulp.start('js');
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
         .pipe(zip( plugin_name + '_staging.zip' ))

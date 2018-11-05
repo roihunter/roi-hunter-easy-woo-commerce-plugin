@@ -2,9 +2,9 @@
 /*
 Plugin Name: ROI Hunter Easy
 Description: Turn visitors into customers.
-Version:     0.0.5
-Author:      Karolína Vyskočilová
-Author URI:  https://kybernaut.cz
+Version:     0.0.6
+Author:      ROI Hunter Easy
+Author URI:  https://easy.roihunter.com
 */
 
 // If this file is called directly, abort.
@@ -125,10 +125,4 @@ function rhe_debug( $code ) {
 	echo '<pre>';
 	var_dump($code);
 	echo '</pre>';
-}
-
-add_filter( 'roi_hunter_easy_iframe_attributes', 'kv_roi_hunter_easy_iframe_attributes');
-function kv_roi_hunter_easy_iframe_attributes( $iframe ) {
-	$iframe['activeBeProfile'] = 'staging';
-	return $iframe;
 }
