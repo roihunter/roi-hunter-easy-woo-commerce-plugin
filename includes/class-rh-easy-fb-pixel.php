@@ -22,11 +22,17 @@ class RH_Easy_FB_Pixel {
 
         if( $this->pixel_id ) {
             add_action( 'wp_head', array( $this, 'inject_pixel' ) );
-            add_action( 'wp_footer', array( $this, 'inject_pixel_noscript' ) );
+            add_action( 'wp_footer', array( $this, 'inject_pixel_noscript' ) );            
         }
 
     }
 
+    /**
+     * Inject pixel script version
+     *
+     * @return void
+     * @since 1.0.0
+     */
     public function inject_pixel() {
         echo sprintf("
 <!-- Facebook Integration Begin -->
@@ -126,6 +132,12 @@ rheasy_fbq('%d', 'PageView');
 
     }
 
+    /**
+     * Inject FB pixel noscript version
+     *
+     * @return void
+     * @since 1.0.0
+     */
     public function inject_pixel_noscript() {
         echo sprintf("
 <!-- Facebook Pixel Code -->
@@ -140,7 +152,14 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
         );
     }
     
-    public function add_to_cart_event( $to_string = true) {
+    /**
+     * Construct add_to_cart event code
+     *
+     * @param   bool  $to_string    choose the return format (array or JSON string)
+     * @return  mixed               an array or string
+     * @since 1.0.0
+     */
+    public function add_to_cart_event( $to_string = true ) {
 
         if ( $to_string ) {
             return sprintf(
@@ -154,7 +173,13 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
 
     }
     
-    private function pixel_init_code( ) {
+    /**
+     * Insert the pixel code
+     *
+     * @return void
+     * @since 1.0.0
+     */
+    private function pixel_init_code() {
 
         if ( is_product() || is_order_received_page() ) {
 
@@ -192,7 +217,15 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
 
     }
 
-    private function get_params( $order_id = null, $to_string = true) {
+    /**
+     * Construct parameters for rheasy_fbq action
+     *
+     * @param   int     $order_id   order ID
+     * @param   bool    $to_string  choose the return format (array or JSON string)
+     * @return  mixed   $params     params in an array or JSON string
+     * @since 1.0.0
+     */
+    private function get_params( $order_id = null, $to_string = true ) {
 
         $params = array(    
             'content_type' => 'product',
