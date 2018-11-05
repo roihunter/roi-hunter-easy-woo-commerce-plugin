@@ -22,7 +22,8 @@ class RH_Easy_FB_Pixel {
 
         if( $this->pixel_id ) {
             add_action( 'wp_head', array( $this, 'inject_pixel' ) );
-            add_action( 'wp_footer', array( $this, 'inject_pixel_noscript' ) );            
+            add_action( 'wp_footer', array( $this, 'inject_pixel_noscript' ) );          
+            add_action( 'woocommerce_add_to_cart', array( $this, 'inject_add_to_cart_event' ) );  
         }
 
     }
@@ -150,6 +151,33 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
         ",
         esc_js( $this->pixel_id )
         );
+    }
+
+    /**
+     * Triggers AddToCart for cart page and add_to_cart button clicks
+     * Hooked here: https://docs.woocommerce.com/wc-apidocs/source-class-WC_Cart.html#1118
+     *
+     * @param string|bool   $cart_item_key
+     * @param int           $product_id         contains the ID of the product to add to the cart
+     * @param int           $quantity           contains the quantity of the item to add
+     * @param int           $variation_id       ID of the variation being added to the cart
+     * @param array         $variation          attribute values
+     * @param array         $cart_item_data     extra cart item data we want to pass into the item
+     * @return void
+     * @since 1.0.0
+     */
+    public function inject_add_to_cart_event( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) {
+
+        printf("
+<!-- Facebook Pixel Event Code -->
+<script>
+rheasy_fbq(%s);
+</script>
+<!-- End Facebook Pixel Event Code -->
+        ",
+            $this->add_to_cart_event() 
+        );
+
     }
     
     /**
