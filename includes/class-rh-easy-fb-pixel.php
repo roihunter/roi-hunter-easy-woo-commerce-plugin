@@ -220,7 +220,7 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
             }
 
             $params['content_name'] = $product->get_title();
-            $params['value'] = wc_get_price_including_tax( $product );
+            $params['value'] = strval( wc_get_price_including_tax( $product ) );
             
             
         } elseif ( is_order_received_page() ) {
@@ -228,14 +228,14 @@ src=\"https://www.facebook.com/tr?id=%s&ev=PageView&noscript=1\"/>
             $order = RH_Easy_Helper::get_order_thankyou();
             
             if ( $order && ! $order->has_status( 'failed' ) ) {
-                $params['value'] = RH_Easy_Helper::get_order_total( $order );
+                $params['value'] = strval( RH_Easy_Helper::get_order_total( $order ) );
                 $params['content_ids'] = RH_Easy_Helper::get_content_ids( $order->get_items() );
             }
 
         // Cart or ajax call
         } else {
     
-            $params['value'] = WC()->cart->subtotal;
+            $params['value'] = strval( WC()->cart->subtotal);
             $params['content_ids'] = RH_Easy_Helper::get_content_ids( WC()->cart->get_cart() );
             
         }       
