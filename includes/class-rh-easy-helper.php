@@ -206,4 +206,24 @@ class RH_Easy_Helper
         $wpdb->query($wpdb->prepare('DELETE FROM `' . $wpdb->prefix . 'woocommerce_api_keys` WHERE `description` LIKE "%s"', '%Roi Hunter Easy - API%'));
     }
 
+    /**
+     * Add code to WC enqueue js
+     * https://docs.woocommerce.com/wc-apidocs/function-wc_enqueue_js.html
+     *
+     * @param string $code
+     * @return void
+     * @since 0.0.6
+     */
+    public static function wc_enqueue_js( $code ) {
+        
+        global $wc_queued_js;
+  
+        if (function_exists('wc_enqueue_js') && empty($wc_queued_js)) {
+          wc_enqueue_js($code);
+        } else {
+          $wc_queued_js = $code."\n".$wc_queued_js;
+        }
+
+    }
+
 }
