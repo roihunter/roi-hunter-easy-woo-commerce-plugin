@@ -208,6 +208,7 @@ class RH_Easy_Helper
 
     /**
      * Add code to WC enqueue js
+     * Copied from: facebook-for-woocommerce-master\includes\fbutils.php ( wc_enqueue_js() , lines: 43-51)
      * https://docs.woocommerce.com/wc-apidocs/function-wc_enqueue_js.html
      *
      * @param string $code
