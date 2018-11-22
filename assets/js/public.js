@@ -1,6 +1,8 @@
 jQuery(document).ready(function($){
 
-    $('body').on( 'added_to_cart', function(){
+    $(document.body).on( 'added_to_cart updated_cart_totals', function(){
+
+        console.log('add_to_cart fired'); // todo delete
         
         $.ajax({
             url: rhe.ajax_url,
