@@ -13,13 +13,13 @@ Do you want to boost the power of your ads even further? Our plugin gives you ac
 ROI Hunter Easy will take care of all the annoying tech settings so you can have professional remarketing campaigns in 4 simple steps:
 
 * Install the plugin to your WooCommerce store for Free
-* Connect Google Adwords
+* Connect Google Ads
 * Connect Facebook Business Manager
 * Create your first Campaign
 
 You do not need any technical knowledge. ROI Hunter Easy does all settings for you.
 
-**A separate Google Adwords account and Facebook Business Manager are required. ROI Hunter Easy is free. You only pay for your running ads directly to Google and Facebook. You can set up your budget directly in ROI Hunter Easy.**
+**A separate Google Ads account and Facebook Business Manager are required. ROI Hunter Easy is free. You only pay for your running ads directly to Google and Facebook. You can set up your budget directly in ROI Hunter Easy.**
 
 ## Features:
 ROI Hunter will automatically do these things for you:
