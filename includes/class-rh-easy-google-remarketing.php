@@ -112,7 +112,7 @@ class RH_Easy_Google_Integration
         RH_Easy_Helper::wc_enqueue_js( sprintf("
         gtag('event', 'add_to_cart', %s);
         ",
-            $this->add_to_cart_event() 
+            json_encode ( $this->add_to_cart_event() )
         ) );
 
     }
