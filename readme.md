@@ -33,7 +33,7 @@ ROI Hunter will automatically do these things for you:
 Plugin reflects our best practices from over 10 years of advertising experience in Google Ads and Facebook.
 
 ## Try our demo
-[Click for open ROI Hunter Easy Demo](https://easy.roihunter.com/demo?utm_source=github&utm_campaign=github_readme&utm_medium=website&utm_content=magento1#demo)
+[Click for open ROI Hunter Easy Demo](https://easy.roihunter.com/demo?utm_source=wordpress&utm_medium=listing)
 
 ## Requirements
 * WooCommerce 3.4 and newer
