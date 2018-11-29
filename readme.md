@@ -1,6 +1,6 @@
 # ROI Hunter Easy Retargeting
 
-Growing sales have never been easier thanks to ROI Hunter Easy Retargeting (https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy.  Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
+Growing sales have never been easier thanks to [ROI Hunter Easy Retargeting](https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy.  Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
 
 Do you want to boost the power of your ads even further? Our plugin gives you access to professionally designed Facebook Ad Overlays. With their help, you'll be able to stand out in the barrage of ads everyday internet user encounters and get the attention you deserve. 
 
