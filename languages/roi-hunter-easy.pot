@@ -16,84 +16,32 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: roi-hunter-easy.php:98, includes/admin/wc-settings-tab.php:22, includes/admin/wc-settings-tab.php:36
+#: roi-hunter-easy-for-woocommerce.php:93, includes/admin/settings.php:27, includes/admin/settings.php:28
 msgid "ROI Hunter Easy"
 msgstr ""
 
-#: roi-hunter-easy.php:99
+#: roi-hunter-easy-for-woocommerce.php:94
 msgid "WooCommerce"
 msgstr ""
 
-#: roi-hunter-easy.php:105
+#: roi-hunter-easy-for-woocommerce.php:100
 msgid "%1$s requires %2$s version %3$s. Please activate/install %2$s before activation of %1$s. "
 msgstr ""
 
-#: roi-hunter-easy.php:109
+#: roi-hunter-easy-for-woocommerce.php:104
 msgid "%1$s requires %2$s version %3$s. Please upgrade %2$s at least to version %3$s before activation of %1$s. "
 msgstr ""
 
-#: roi-hunter-easy.php:115
+#: roi-hunter-easy-for-woocommerce.php:110
 msgid "%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>"
 msgstr ""
 
-#: roi-hunter-easy.php:119
+#: roi-hunter-easy-for-woocommerce.php:114
 msgid "The plugin has been deactivated."
 msgstr ""
 
-#: includes/class-rh-easy-helper.php:182
+#: includes/class-rh-easy-helper.php:181
 msgid "Roi Hunter Easy"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:19
-msgid "ROI Hunter Easy Integration"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:20
-msgid "Enable integration with ROI Hunter Easy service"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:42
-msgid "Key ID"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:48
-msgid "Customer Key"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:54
-msgid "Customer Secret"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:66
-msgid "Customer ID"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:72
-msgid "Access token"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:78
-msgid "Google Conversion ID"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:84
-msgid "Google Conversion Label"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:90
-msgid "Facebook Pixel ID"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:96
-msgid "Client token"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:102
-msgid "Cleanup on Uninstall"
-msgstr ""
-
-#: includes/class-rh-easy-integration.php:103
-msgid "Completely remove settings on plugin removal"
 msgstr ""
 
 #: includes/rest-api-endpoints.php:138, includes/rest-api-endpoints.php:167, includes/rest-api-endpoints.php:212, includes/rest-api-endpoints.php:245, includes/rest-api-endpoints.php:277, includes/rest-api-endpoints.php:322
@@ -112,6 +60,6 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/wc-settings-tab.php:117
+#: includes/admin/settings.php:96
 msgid "Your browser does not support iFrames."
 msgstr ""
