@@ -63,8 +63,6 @@ class WC_Settings_RH_Easy_New {
             'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
             'rhEasyIFrameUrl' => 'https://magento.roihunter.com/'
         ));        
-
-        //rhe_debug( $iframe );
         
         ?>
         <script type="application/javascript">
