@@ -109,10 +109,17 @@ class RH_Easy_Google_Integration
      */
     public function inject_add_to_cart_event() {
 
-        RH_Easy_Helper::wc_enqueue_js( sprintf("
-        gtag('event', 'add_to_cart', %s);
-        ",
-            json_encode ( $this->add_to_cart_event() )
+        $id_value = $this->get_prodid_totalvalue();
+
+        RH_Easy_Helper::wc_enqueue_js( sprintf('
+        gtag("event", "add_to_cart", {
+            dynx_prodid: %1$d,
+            dynx_totalvalue: %2$d,
+            dynx_pagetype: "page",
+        });
+        ',
+            $id_value['id'],
+            $id_value['value']
         ) );
 
     }
