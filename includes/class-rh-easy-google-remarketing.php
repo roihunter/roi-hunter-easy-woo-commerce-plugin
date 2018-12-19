@@ -113,12 +113,12 @@ class RH_Easy_Google_Integration
 
         RH_Easy_Helper::wc_enqueue_js( sprintf('
         gtag("event", "add_to_cart", {
-            dynx_prodid: %1$d,
-            dynx_totalvalue: %2$d,
+            dynx_prodid: %1$s,
+            dynx_totalvalue: %2$d,            
             dynx_pagetype: "page",
         });
         ',
-            $id_value['id'],
+            json_encode($id_value['id']),
             $id_value['value']
         ) );
 
