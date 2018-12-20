@@ -1,7 +1,7 @@
 ﻿=== ROI Hunter Easy ===
 Contributors: vyskoczilova
 Tags: woocommerce
-Requires at least: 5.0.2
+Requires at least: 4.6
 Tested up to: 5.0.2
 Stable tag: trunk
 License: GPLv2 or later
@@ -16,7 +16,7 @@ TODO add description.
 TODO
 
 === Requirements ===
-- WooCommerce 3.5 and newer
+- WooCommerce 3.4 and newer
 - Enabled pretty permalinks (required for WooCommerce REST API)
 
 == Installation ==
