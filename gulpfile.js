@@ -15,7 +15,7 @@ var replace = require('gulp-replace');
 
 // Settings
 var wpTheme = "./";
-var plugin_name = 'roi-hunter-easy';
+var plugin_name = 'roi-hunter-easy-for-woocommerce';
 var zip_files = ['./**/*', '!node_modules/**/*','!.vscode/**/*', '!node_modules', '!gulpfile.js', '!.gitignore', '!package.json', '!*.zip', '!todo.txt', '!readme.md'];
 
 // Translation related.
@@ -90,6 +90,7 @@ gulp.task( "js", function() {
 // activeBeProfile = production
 gulp.task('zip', function() {
     gulp.start('js');
+    gulp.start('translate');
     gulp.src( zip_files )
         .pipe(zip( plugin_name + '.zip' ))
         .pipe(gulp.dest('.'))
@@ -98,6 +99,7 @@ gulp.task('zip', function() {
 // activeBeProfile = staging
 gulp.task('zip-staging', function() {
     gulp.start('js');
+    gulp.start('translate');
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
         .pipe(replace("'rhEasyIFrameUrl' => 'https://magento.roihunter.com/'", "'rhEasyIFrameUrl' => 'https://goostav-fe-staging.roihunter.com/'"))

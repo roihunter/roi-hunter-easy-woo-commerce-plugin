@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: ROI Hunter Easy
+Plugin Name: ROI Hunter Easy for WooCommerce
 Description: Turn visitors into customers.
 Version:     0.0.6
 Author:      ROI Hunter Easy
@@ -117,12 +117,4 @@ function roi_hunter_easy_admin_notice() {
 		
 	if ( isset( $_GET['activate'] ) )
 		unset( $_GET['activate'] );
-}
-
-///---------------------------- DEV ---------------------
-
-function rhe_debug( $code ) {
-	echo '<pre>';
-	var_dump($code);
-	echo '</pre>';
 }
