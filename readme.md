@@ -31,7 +31,7 @@ Plugin reflects our best practices from over 10 years of advertising experience 
 [Click for open ROI Hunter Easy Demo](https://easy.roihunter.com/demo?utm_source=wordpress&utm_medium=listing)
 
 ## Requirements
-* WooCommerce 3.4 and newer
+* WooCommerce 3.4 or newer
 * Enabled pretty permalinks (required for WooCommerce REST API)
 
 ## Installation
