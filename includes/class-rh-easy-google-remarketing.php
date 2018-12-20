@@ -115,7 +115,7 @@ class RH_Easy_Google_Integration
         gtag("event", "add_to_cart", {
             dynx_prodid: %1$s,
             dynx_totalvalue: %2$d,            
-            dynx_pagetype: "page",
+            dynx_pagetype: "conversionintent",
         });
         ',
             json_encode($id_value['id']),
