@@ -88,6 +88,14 @@ If you need to return the plugin to its original settings (for example when you 
 === Support ===
 If you would have any difficulty with the usage of this extension, or have any issues you would like to raise with us please feel free to submit a support ticket by emailing easy@roihunter.com.
 
+== Screenshots ==
+ 
+1. Add description to the first screenshot screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
+the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
+directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
+(or jpg, jpeg, gif).
+2. This is the second screen shot
+
 == Changelog ==
 
 = 1.0.0 =
