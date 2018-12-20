@@ -1,13 +1,14 @@
-﻿=== ROI Hunter Easy ===
-Contributors: vyskoczilova
-Tags: woocommerce
+﻿=== ROI Hunter Easy for WooCommerce ===
+Contributors: roihuntereasy, vyskoczilova
+Tags: woocommerce, roi, google analytics, gtm, facebook pixel
 Requires at least: 4.6
 Tested up to: 4.9.8
+Requires PHP: 5.6.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-WC requires at least: 3.0.0
-WC tested up to: 3.3.5
+WC requires at least: 3.4.0
+WC tested up to: 3.4.5
 
 [ROI Hunter Easy](https://easy.roihunter.com/) helps power your WooCommerce store with Google and Facebook Remarketing. 
 
