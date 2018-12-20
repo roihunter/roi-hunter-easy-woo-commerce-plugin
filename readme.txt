@@ -2,7 +2,7 @@
 Contributors: roihuntereasy, vyskoczilova
 Tags: woocommerce, roi, google analytics, gtm, facebook pixel
 Requires at least: 4.6
-Tested up to: 5.0.1
+Tested up to: 5.0.2
 Requires PHP: 5.6.0
 Stable tag: trunk
 License: GPLv2 or later
