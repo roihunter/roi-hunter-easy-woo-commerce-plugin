@@ -1,7 +1,7 @@
 # Google Remarketing by ROI Hunter Easy
 
 ## Requirements
-* WooCommerce 3.4 and newer
+* WooCommerce 3.5 or newer
 * Enabled pretty permalinks (required for WooCommerce REST API)
 
 ## Installation

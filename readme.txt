@@ -1,8 +1,8 @@
 ﻿=== ROI Hunter Easy ===
 Contributors: vyskoczilova
 Tags: woocommerce
-Requires at least: 4.6
-Tested up to: 4.9.8
+Requires at least: 5.0.2
+Tested up to: 5.0.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ TODO add description.
 TODO
 
 === Requirements ===
-- WooCommerce 3.4 and newer
+- WooCommerce 3.5 and newer
 - Enabled pretty permalinks (required for WooCommerce REST API)
 
 == Installation ==
@@ -33,6 +33,10 @@ The latest versions are always available in the WordPress Repository, and you ca
 After the installation, continue by click to `ROI Hunter Easy` menu item and follow the instructions in our Sign Up wizard.
 
 == Changelog ==
+
+= 1.0.0 =
+* feature send FB&ADS events when using ajax
+* fix price value for FB events
 
 = 0.0.6 =
 * fix cleanup issues
