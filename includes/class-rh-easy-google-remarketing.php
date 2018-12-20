@@ -24,9 +24,8 @@ class RH_Easy_Google_Integration
         $this->conversion_label = $helper->get_option('google_conversion_label');
 
         if ($this->conversion_id && $this->conversion_label) {
-            // REMARKETING
             add_action('wp_footer', array($this, 'inject_remarketing'));
-            //woocommerce_add_to_cart
+            add_action( 'woocommerce_add_to_cart', array( $this, 'inject_add_to_cart_event' ), 20, 0 );  
         }
 
     }
@@ -98,6 +97,30 @@ class RH_Easy_Google_Integration
             );
 
         }
+
+    }
+
+    /**
+     * Triggers AddToCart for cart page and add_to_cart button clicks
+     * Hooked here: https://docs.woocommerce.com/wc-apidocs/source-class-WC_Cart.html#1118
+     *
+     * @return void
+     * @since 1.0.0
+     */
+    public function inject_add_to_cart_event() {
+
+        $id_value = $this->get_prodid_totalvalue();
+
+        RH_Easy_Helper::wc_enqueue_js( sprintf('
+        gtag("event", "add_to_cart", {
+            dynx_prodid: %1$s,
+            dynx_totalvalue: %2$d,            
+            dynx_pagetype: "conversionintent",
+        });
+        ',
+            json_encode($id_value['id']),
+            $id_value['value']
+        ) );
 
     }
 

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
-    $('body').on( 'added_to_cart', function(){
+    $(document.body).on( 'added_to_cart updated_cart_totals', function(){
         
         $.ajax({
             url: rhe.ajax_url,
@@ -14,12 +14,9 @@ jQuery(document).ready(function($){
 
                 if( data['fb'] ) {
                     rheasy_fbq( data['fb'][0], data['fb'][1], data['fb'][2] );
-                    //console.log( data['fb'][0]);
-                    //console.log( data['fb'][1]); 
-                    //console.log( data['fb'][2]); 
                 }
 
-                // // https://stackoverflow.com/questions/5085132/inserting-google-adwords-conversion-tracking-with-javascript-or-jquery
+                //  https://stackoverflow.com/questions/5085132/inserting-google-adwords-conversion-tracking-with-javascript-or-jquery
                 if ( data['gtm'] ) {
                     
                     var google_conversion_id = data['gtm'].conversion_id;
@@ -37,8 +34,6 @@ jQuery(document).ready(function($){
                             dynx_totalvalue: data['gtm'].totalvalue,
                         });
                     });
-
-                    //console.log(data['gtm']);
 
                 }
 
