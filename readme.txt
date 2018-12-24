@@ -49,12 +49,6 @@ ROI Hunter will automatically do these things for you:
 * choose the most effective dynamic banner/text templates.
 
 Plugin reflects our best practices from over 10 years of advertising experience in Google Ads and Facebook.
- 
-=== Subscription options:: ===
-* Extension basic plan: $0.00
-* Extension premium plan: $9.99 
-
-\* Extension do not cover your Google Ads and Facebook Ad Spend.
 
 === Try our demo ===
 [Click for open ROI Hunter Easy Demo](https://easy.roihunter.com/demo?utm_source=github&utm_campaign=github_readme&utm_medium=website&utm_content=magento1#demo)
@@ -90,44 +84,15 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Screenshots ==
  
-1. Add description to the first screenshot screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets 
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png` 
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Connect your Google Ads Account
+2. Preview your Google Ads
+3. Set your daily budget for Google Ads
+4. Connect your Facebook
+5. Preview your Facebook Ads
+6. Give it some time and watch the results
+7. In settings you can see your connected accounts
 
 == Changelog ==
 
 = 1.0.0 =
-* feature send FB&ADS events when using ajax
-* fix price value for FB events
-
-= 0.0.6 =
-* fix cleanup issues
-* staging gulp
-
-= 0.0.5 =
-* Move settings to get_option() instead of using WC_Settings Class and show it directly in the menu
-* Fix RH_EASY_VERSION format 
-* Remove WC API user on plugin deactivation
-
-= 0.0.4 =
-* google-tracking + fb-tracking API jako DELETE
-* zabezpečení všech endpointů kromě check pomocí parametru clientToken
-* do iframu se posílá WooCommerce REST API URL + Consumer Key + Consumer Secret
-
-= 0.0.3 =
-* option "id" nahrazena "customer_id"
-* opraven problém s načítáním iframu
-* přidán parametr stagingActive a activeProfile přejmenován na activeBeProfile
-* check REST endpoint jako POST
-* content_ids jako pole IDček
-* google_conversion_id a google_conversion_label opraveno, upraveny špatně předané parametry, opraveno google_conversion_order_id
-* neposílat údaje při refreshi thankyou stránky
-* fbq skript upraven na nekonfliktní mód
-
-= 0.0.2 =
-* integrace FB tracking pixel
-
-= 0.0.1 = 
-* integrace WooCommerce & API
+* Final release
