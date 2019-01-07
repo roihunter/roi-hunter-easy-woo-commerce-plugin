@@ -1,4 +1,5 @@
 # ROI Hunter Easy Retargeting
+[![plugin version](https://img.shields.io/wordpress/plugin/v/roi-hunter-easy-for-woocommerce.svg)](https://wordpress.org/plugins/roi-hunter-easy-for-woocommerce)
 
 Growing sales have never been easier thanks to [ROI Hunter Easy Retargeting](https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy.  Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
 
