@@ -14,14 +14,14 @@ WC tested up to: 3.5.2
 
 == Description ==
 
-[ROI Hunter Easy](https://easy.roihunter.com/) helps power your WooCommerce store with Google and Facebook Remarketing. We know it's a pain to get dynamic remarketing up and running. Developers need to produce an xml feed in a certain format, you need to upload it to the platforms, correct wrong product formats, ask developers to put all codes to right places, set up audiences, connect everything together, go through dozens of settings, etc. 
+Growing sales have never been easier thanks to [ROI Hunter Easy](https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy. Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
 
 = Benefits =
-Re-engage your unconverted visitors through multiple channels. Engaging through both Facebook and Google Display Network will give you access to over 95% of internet users. And practically guarantee that you will be able to engage visitors after they leave your store without a purchase. 
+Engaging through both Facebook and Google Display Network will give you access to over 95% of internet users. And practically guarantee that you will be able to engage visitors after they leave your store without a purchase. 
 
 Advanced audience segmentation and bidding customization will provide your campaign with the highest efficiency levels possible. 
 
-Do you want to boost the power of your ads even further? Our premium level subscription gives you access to professionally designed Facebook Ad Overlays. With their help, you'll be able to stand out in the barrage of ads everyday internet user encounters and get the attention you deserve. 
+Do you want to boost the power of your ads even further? Our plugin gives you access to professionally designed Facebook Ad Overlays. With their help, you'll be able to stand out in the barrage of ads everyday internet user encounters and get the attention you deserve. 
 
 = Setup is quick and easy =
 ROI Hunter Easy will take care of all the annoying tech settings so you can have professional remarketing campaigns in 4 simple steps:
@@ -37,7 +37,6 @@ You do not need any technical knowledge. ROI Hunter Easy does all settings for y
 
 = Features: =
 ROI Hunter will automatically do these things for you:
-
 * create product catalog for your website
 * upload your product feed to Google
 * upload your product catalog to Facebook
@@ -51,8 +50,8 @@ Plugin reflects our best practices from over 10 years of advertising experience 
 [Click for open ROI Hunter Easy Demo](https://easy.roihunter.com/demo?utm_source=wordpress&utm_medium=listing)
 
 = Requirements =
-- WooCommerce 3.4 or newer
-- Enabled pretty permalinks (required for WooCommerce REST API)
+* WooCommerce 3.4 or newer
+* Enabled pretty permalinks (required for WooCommerce REST API)
 
 == Installation ==
 
