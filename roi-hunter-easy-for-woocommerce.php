@@ -113,7 +113,7 @@ function roi_hunter_easy_admin_notice() {
 
 	if ( version_compare( PHP_VERSION, '5.3.0' ) < 0 ) { 
 		
-		$error .= '<p>' . sprintf( __( '%1$s requires at least PHP 5.6. Contact your hosting provider for more support.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
+		$error .= '<p>' . sprintf( __( '%1$s requires at least PHP 5.3. Contact your hosting provider for more support.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
 
 	}
 
