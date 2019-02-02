@@ -33,7 +33,7 @@ add_action( 'plugins_loaded', 'roi_hunter_easy_plugin_init' );
 function roi_hunter_easy_plugin_init() {
 	
 	// If WooCommerce is NOT active, if not correct version or not pretty permalinks or old PHP version
-	if ( ! class_exists( 'woocommerce' ) || ! get_option('permalink_structure') || ( class_exists( 'woocommerce' ) && version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) ) || version_compare( PHP_VERSION, '5.6.0' ) < 0 ) {
+	if ( ! class_exists( 'woocommerce' ) || ! get_option('permalink_structure') || ( class_exists( 'woocommerce' ) && version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) ) || version_compare( PHP_VERSION, '5.3.0' ) < 0 ) {
 		
 		add_action( 'admin_init', 'roi_hunter_easy_deactivate' );
 		add_action( 'admin_notices', 'roi_hunter_easy_admin_notice' );
@@ -111,7 +111,7 @@ function roi_hunter_easy_admin_notice() {
 
 	}
 
-	if ( version_compare( PHP_VERSION, '5.6.0' ) < 0 ) { 
+	if ( version_compare( PHP_VERSION, '5.3.0' ) < 0 ) { 
 		
 		$error .= '<p>' . sprintf( __( '%1$s requires at least PHP 5.6. Contact your hosting provider for more support.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
 
