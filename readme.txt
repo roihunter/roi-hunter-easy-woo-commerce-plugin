@@ -92,7 +92,8 @@ If you would have any difficulty with the usage of this extension, or have any i
 == Changelog ==
 
 = 1.0.1 = ( unreleased )
-* Fix: Generating client_token - use `random_bytes` instead of `openssl_random_pseudo_bytes` on PHP 7+, add fallback for older PHP versions.
+* Fix: When generating the client_token - use `random_bytes` instead of `openssl_random_pseudo_bytes` on PHP 7+, add fallback for older PHP versions.
+* Fix: Check PHP version and prevent the plugin activation if PHP version is not at least 5.6.
 
 = 1.0.0 =
 * Final release

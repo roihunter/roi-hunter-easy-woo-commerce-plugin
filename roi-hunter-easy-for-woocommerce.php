@@ -32,8 +32,8 @@ function roi_hunter_easy_localize_plugin() {
 add_action( 'plugins_loaded', 'roi_hunter_easy_plugin_init' );
 function roi_hunter_easy_plugin_init() {
 	
-	// If WooCommerce is NOT active, if not correct version or not pretty permalinks
-	if ( ! class_exists( 'woocommerce' ) || ! get_option('permalink_structure') || ( class_exists( 'woocommerce' ) && version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) )) {
+	// If WooCommerce is NOT active, if not correct version or not pretty permalinks or old PHP version
+	if ( ! class_exists( 'woocommerce' ) || ! get_option('permalink_structure') || ( class_exists( 'woocommerce' ) && version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) ) || version_compare( PHP_VERSION, '5.6.0' ) < 0 ) {
 		
 		add_action( 'admin_init', 'roi_hunter_easy_deactivate' );
 		add_action( 'admin_notices', 'roi_hunter_easy_admin_notice' );
@@ -108,6 +108,12 @@ function roi_hunter_easy_admin_notice() {
 	if ( ! get_option('permalink_structure') ) { 
 
 		$error .= '<p>' . sprintf( __( '%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
+
+	}
+
+	if ( version_compare( PHP_VERSION, '5.6.0' ) < 0 ) { 
+		
+		$error .= '<p>' . sprintf( __( '%1$s requires at least PHP 5.6. Contact your hosting provider for more support.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
 
 	}
 
