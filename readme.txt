@@ -3,7 +3,7 @@ Contributors: roihuntereasy, vyskoczilova
 Tags: woocommerce, roi, google analytics, gtm, facebook pixel
 Requires at least: 4.6
 Tested up to: 5.0.2
-Requires PHP: 5.6.0
+Requires PHP: 5.3.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,11 @@ If you would have any difficulty with the usage of this extension, or have any i
 7. In settings you can see your connected accounts
 
 == Changelog ==
+
+= 1.0.1 (2019-02-02) =
+* Fix: When generating the client_token - use `random_bytes` instead of `openssl_random_pseudo_bytes` on PHP 7+, add fallback for older PHP versions.
+* Fix: Check PHP version and prevent the plugin activation if PHP version is not at least 5.3.
+* Fix: Delete empty first line in `includes/rest-api-endpoints.php`
 
 = 1.0.0 =
 * Final release

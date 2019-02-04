@@ -12,9 +12,22 @@ $helper = new RH_Easy_Helper();
 // Generate clientToken
 if( ! $helper->get_option('clientToken') ) {
 	
-	// Create token and update default options
+	// Create token 
+	if ( version_compare( PHP_VERSION, '7.0.0' ) >= 0 ) {
+		$client_token = bin2hex( random_bytes(16) );
+	} else {
+		// https://stackoverflow.com/questions/4356289/php-random-string-generator#answer-4356295
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$client_token = '';
+		for ($i = 0; $i < 32; $i++) {
+			$client_token .= $characters[rand(0, $charactersLength - 1)];
+		}
+	}
+	
+	// Update default options
 	$updated_options = array(
-		'clientToken' => bin2hex(openssl_random_pseudo_bytes(16)),
+		'clientToken' => $client_token,
 	);
 	$helper->update_options( $updated_options );
 	
