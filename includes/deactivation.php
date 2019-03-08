@@ -15,9 +15,7 @@ if( $helper->get_option('cleanup') !== false ) {
 	// Remove all our possible API keys
 	$helper->delete_all_our_keys();
 
-	// Remove API key from our options
-	$helper->delete_option( 'key_id' );
-	$helper->delete_option( 'cust_secret' );
-	$helper->delete_option( 'cust_key' );
+	// Remove all plugin options
+	delete_option( 'roi_hunter_easy' );
 
 }
