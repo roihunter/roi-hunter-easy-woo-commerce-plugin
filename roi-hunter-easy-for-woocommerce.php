@@ -56,7 +56,8 @@ function roi_hunter_easy_plugin_init() {
 	
 	// Admin
 	require_once( RH_EASY_DIR . 'includes/admin/settings.php' );				
-	require_once( RH_EASY_DIR . 'includes/admin/plugin-settings-link.php' );				
+	require_once( RH_EASY_DIR . 'includes/admin/plugin-settings-link.php' );
+	require_once( RH_EASY_DIR . 'includes/admin/rating.php' );
 
 }
 
