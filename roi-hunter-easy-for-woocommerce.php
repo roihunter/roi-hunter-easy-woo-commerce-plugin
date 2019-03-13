@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'RH_EASY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RH_EASY_URL', plugin_dir_url( __FILE__ ) );
 define( 'RH_EASY_BASENAME', plugin_basename( __FILE__ ) );
-define( 'RH_EASY_VERSION', '1.0.3' );
+define( 'RH_EASY_VERSION', '1.0.2' );
 define( 'RH_EASY_MIN_WC_VERSION', '3.4.0');
 
 /**
