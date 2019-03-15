@@ -46,6 +46,7 @@ You do not need any technical knowledge. ROI Hunter Easy does all settings for y
 
 = Features: =
 ROI Hunter will automatically do these things for you:
+
 * create product catalog for your website
 * upload your product feed to Google
 * upload your product catalog to Facebook
