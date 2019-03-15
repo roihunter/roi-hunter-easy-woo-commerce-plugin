@@ -16,7 +16,7 @@ var replace = require('gulp-replace');
 // Settings
 var wpTheme = "./";
 var plugin_name = 'roi-hunter-easy-for-woocommerce';
-var zip_files = ['./**/*', '!node_modules/**/*','!.vscode/**/*', '!node_modules', '!gulpfile.js', '!.gitignore', '!package.json', '!*.zip', '!todo.txt', '!readme.md'];
+var zip_files = ['./**/*', '!node_modules/**/*','!.vscode/**/*', '!node_modules', '!gulpfile.js', '!.gitignore', '!package.json', '!package-lock.json', '!*.zip', '!todo.txt', '!*.md'];
 
 // Translation related.
 var text_domain             = 'roi-hunter-easy'; // Your textdomain here.
