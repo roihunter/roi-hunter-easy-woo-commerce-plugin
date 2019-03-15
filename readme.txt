@@ -1,6 +1,6 @@
-﻿=== ROI Hunter Easy for WooCommerce ===
+﻿=== Google and Facebook Remarketing & Marketing plugin for WooCommerce | ROI Hunter Easy ===
 Contributors: roihuntereasy, vyskoczilova
-Tags: woocommerce, roi, google analytics, gtm, facebook pixel
+Tags: WooCommerce, Google Dynamic Remarketing, Facebook Dynamic Retargeting, Product Feed, Search Ads
 Requires at least: 4.6
 Tested up to: 5.0.2
 Requires PHP: 5.3.0
@@ -10,11 +10,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 3.4.0
 WC tested up to: 3.5.2
 
-[ROI Hunter Easy](https://easy.roihunter.com/) helps power your WooCommerce store with Google and Facebook Remarketing. 
+[ROI Hunter Easy](https://easy.roihunter.com/) Create powerful ads for Google and Facebook with ROI Hunter Easy plugin for WooCommerce. Convert past visitors with retargeting and bring new traffic with search ads.
 
 == Description ==
 
-Growing sales have never been easier thanks to [ROI Hunter Easy](https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy. Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
+Growing sales of your WooCommerce store have never been easier thanks to [ROI Hunter Easy](https://easy.roihunter.com/). Re-engage your past visitors and gain new conversions with dynamic remarketing ads on Google and dynamic product ads i.e. dynamic retargeting ads on Facebook. Showing your audience precisely what they forgot to buy. Leave all the complicated tech stuff to us. ROI Hunter Easy plugin will
+
+* Create your product feed for Google
+* Create your product catalog for Facebook
+* Create Google remarketing tag for your website
+* Create Facebook remarketing pixel for your website
+* Setup remarketing audiences for Google and Facebook
+* Setup dynamic remarketing ads to target past visitors that did not make a purchase
+
+To help you reach new visitors ROI Hunter Easy can help you create Google Search Ads that will target people looking for your products.
 
 = Benefits =
 Engaging through both Facebook and Google Display Network will give you access to over 95% of internet users. And practically guarantee that you will be able to engage visitors after they leave your store without a purchase. 
@@ -37,6 +46,7 @@ You do not need any technical knowledge. ROI Hunter Easy does all settings for y
 
 = Features: =
 ROI Hunter will automatically do these things for you:
+
 * create product catalog for your website
 * upload your product feed to Google
 * upload your product catalog to Facebook
@@ -90,6 +100,10 @@ If you would have any difficulty with the usage of this extension, or have any i
 7. In settings you can see your connected accounts
 
 == Changelog ==
+
+= 1.0.2 (2019-03-14) =
+* Fix: Delete all plugin options on deactivation
+* Add a rating notice into settings page footer
 
 = 1.0.1 (2019-02-02) =
 * Fix: When generating the client_token - use `random_bytes` instead of `openssl_random_pseudo_bytes` on PHP 7+, add fallback for older PHP versions.
