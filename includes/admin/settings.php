@@ -61,7 +61,7 @@ class WC_Settings_RH_Easy_New {
             'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
             'wooCommerceApiKey' => $helper->get_option('cust_key'),
             'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
-            'rhEasyIFrameUrl' => 'https://magento.roihunter.com/'
+            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
         ));        
         
         ?>
