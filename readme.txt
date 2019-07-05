@@ -101,6 +101,9 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Changelog ==
 
+= 1.0.3 (2019-07-08) =
+* Changed internal iframe URL (for FE, GSTV-161)
+
 = 1.0.2 (2019-03-14) =
 * Fix: Delete all plugin options on deactivation
 * Add a rating notice into settings page footer
