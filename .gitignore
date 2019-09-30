@@ -6,5 +6,5 @@ roi-hunter-easy-for-woocommerce.zip
 todo.txt
 roi-hunter-easy_staging.zip
 roi-hunter-easy-for-woocommerce_staging.zip
-assets/css/material.min.css
-assets/js/material.min.js
+assets/**/*.min.css
+assets/**/*.min.js

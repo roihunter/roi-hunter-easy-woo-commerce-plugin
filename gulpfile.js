@@ -57,13 +57,13 @@ gulp.task( "js", function() {
           }
       }))
       .pipe( gulp.dest( 'assets/js' ) );
-    gulp.src('./node_modules/material-design-lite/material.min.js')
-      .pipe(gulp.dest('assets/js'));
+    gulp.src( wpTheme + 'node_modules/material-design-lite/material.min.js' )
+      .pipe(gulp.dest( 'assets/js' ));
   });
 
 gulp.task('css', function() {
-    gulp.src('./node_modules/material-design-lite/material.min.css')
-      .pipe(gulp.dest('assets/css'));
+    gulp.src( wpTheme + 'node_modules/material-design-lite/material.min.css' )
+      .pipe(gulp.dest( 'assets/css' ));
 });
 
 /**

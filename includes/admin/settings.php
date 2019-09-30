@@ -64,35 +64,15 @@ class WC_Settings_RH_Easy_New {
             'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
         );
 
-        wp_enqueue_script( 'roi-hunter-easy', RH_EASY_URL . 'assets/js/material.min.js' );
+        wp_enqueue_script( 'material-ui', RH_EASY_URL . 'assets/js/material.min.js' );
+        wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
+
         wp_enqueue_style( 'roi-hunter-easy', RH_EASY_URL . 'assets/css/material.min.css' );
 
         ?>
 
         <script type="application/javascript">
             const goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
-
-            const buildGoostavUrl = () => {
-                const urlBase = 'https://goostav-fe-staging.roihunter.com/';
-                const urlParams = {
-                    activeBeProfile: 'production',
-                    accessToken: goostavApplicationConfig.accessToken,
-                    wooCommerceApiUrl: goostavApplicationConfig.wooCommerceApiUrl,
-                    wooCommerceApiKey: goostavApplicationConfig.wooCommerceApiKey,
-                    wooCommerceApiSecret: goostavApplicationConfig.wooCommerceApiSecret,
-                    platform: 'WOOCOMMERCE'
-                };
-
-                const strigifiedParams = Object.keys(urlParams).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(urlParams[key])}`).join('&');
-                return urlBase + strigifiedParams;
-            };
-
-            document.addEventListener("DOMContentLoaded", function() {
-                const button = document.getElementById('roi-goto-goostav');
-                button.addEventListener('click', function () {
-                    window.open(buildGoostavUrl());
-                });
-            });
         </script>
 
         <div class="demo-card-wide mdl-card mdl-shadow--2dp">
