@@ -4,7 +4,7 @@
 //npm install --save-dev gulp
 
 // Dependencies
-var gulp = require('gulp');  
+var gulp = require('gulp');
 var include = require('gulp-include');
 var minify = require('gulp-minify');
 var notify = require('gulp-notify'); // Sends message notification to you
@@ -30,7 +30,7 @@ var team                    = 'Kybernaut <karolina@kybernaut.cz>'; // Team's Ema
 // Watch files paths.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
-/** 
+/**
  * INCLUDE JS SCRIPTS AND MINIFY
  * https://www.npmjs.com/package/gulp-include
  * https://www.npmjs.com/package/gulp-minify
@@ -57,7 +57,14 @@ gulp.task( "js", function() {
           }
       }))
       .pipe( gulp.dest( 'assets/js' ) );
+    gulp.src('./node_modules/material-design-lite/material.min.js')
+      .pipe(gulp.dest('assets/js'));
   });
+
+gulp.task('css', function() {
+    gulp.src('./node_modules/material-design-lite/material.min.css')
+      .pipe(gulp.dest('assets/css'));
+});
 
 /**
   * WP POT Translation File Generator.
@@ -89,6 +96,7 @@ gulp.task( "js", function() {
  */
 // activeBeProfile = production
 gulp.task('zip', function() {
+    gulp.start('css');
     gulp.start('js');
     gulp.start('translate');
     gulp.src( zip_files )
@@ -98,6 +106,7 @@ gulp.task('zip', function() {
 );
 // activeBeProfile = staging
 gulp.task('zip-staging', function() {
+    gulp.start('css');
     gulp.start('js');
     gulp.start('translate');
     gulp.src( zip_files )
