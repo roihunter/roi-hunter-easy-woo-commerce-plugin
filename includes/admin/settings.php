@@ -75,7 +75,7 @@ class WC_Settings_RH_Easy_New {
             const goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
         </script>
 
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">Welcome</h2>
             </div>
