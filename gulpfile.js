@@ -7,6 +7,8 @@
 var gulp = require('gulp');
 var include = require('gulp-include');
 var minify = require('gulp-minify');
+let cleanCss = require('gulp-clean-css');
+var rename = require('gulp-rename');
 var notify = require('gulp-notify'); // Sends message notification to you
 var wpPot = require('gulp-wp-pot'); // For generating the .pot file.
 var sort = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
@@ -62,8 +64,16 @@ gulp.task( "js", function() {
   });
 
 gulp.task('css', function() {
+    gulp.src( wpTheme + 'assets/css/admin.css' )
+        .pipe(cleanCss({
+            compatibility: 'ie8'
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe( gulp.dest( 'assets/css' ) );
     gulp.src( wpTheme + 'node_modules/material-design-lite/material.min.css' )
-      .pipe(gulp.dest( 'assets/css' ));
+      .pipe( gulp.dest( 'assets/css' ) );
 });
 
 /**

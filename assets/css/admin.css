@@ -1,0 +1,25 @@
+.roi-card {
+    width: 500px;
+    margin-top: 20px;
+}
+.roi-card h2 {
+    position: absolute;
+    top: 80px;
+    right: 145px;
+}
+.roi-title {
+    height: 245px;
+    background-image: url(../images/og-1.jpg);
+    background-size: cover;
+}
+.roi-subtitle {
+    width: 100%;
+    background: #ebf4fb;
+}
+#roi-goto-goostav {
+    background-color: #03b09a;
+    padding: 5px 16px;
+}
+#roi-goto-goostav:hover {
+    background-color: #009f8d;
+}

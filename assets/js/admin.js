@@ -8,9 +8,6 @@ const getUrlParams = () => {
     if (goostavApplicationConfig.accessToken !== '') {
         return {
             accessToken: goostavApplicationConfig.accessToken,
-            // wooCommerceApiUrl: goostavApplicationConfig.wooCommerceApiUrl,
-            // wooCommerceApiKey: goostavApplicationConfig.wooCommerceApiKey,
-            // wooCommerceApiSecret: goostavApplicationConfig.wooCommerceApiSecret,
             ...defaultParams
         }
     } else {
@@ -34,7 +31,7 @@ const getUrlParams = () => {
 };
 
 const buildGoostavUrl = () => {
-    const urlBase = 'https://goostav-fe-staging.roihunter.com/?';
+    const urlBase = 'https://goostav-fe.roihunter.com/?';
     const urlParams = getUrlParams();
 
     console.log(urlParams);

@@ -68,6 +68,7 @@ class WC_Settings_RH_Easy_New {
         wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
 
         wp_enqueue_style( 'roi-hunter-easy', RH_EASY_URL . 'assets/css/material.min.css' );
+        wp_enqueue_style( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/css/admin.min.css' );
 
         ?>
 
@@ -75,15 +76,15 @@ class WC_Settings_RH_Easy_New {
             const goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
         </script>
 
-        <div class="mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
+        <div class="mdl-card mdl-shadow--2dp roi-card">
+            <div class="mdl-card__title roi-title">
                 <h2 class="mdl-card__title-text">Welcome</h2>
             </div>
-            <div class="mdl-card__supporting-text">
+            <div class="mdl-card__supporting-text roi-subtitle">
                 To set up your account and ads, please visit our application.
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="roi-goto-goostav">
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="roi-goto-goostav">
                     Go to the application
                 </a>
             </div>
