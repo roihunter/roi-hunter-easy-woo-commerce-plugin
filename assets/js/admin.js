@@ -7,15 +7,15 @@ const getUrlParams = () => {
 
     if (goostavApplicationConfig.accessToken !== '') {
         return {
-            defaultParams,
-            additionalParams: {
+            ...defaultParams,
+            payload: {
                 accessToken: goostavApplicationConfig.accessToken,
             }
-    }
+        }
     } else {
         return {
-            defaultParams,
-            additionalParams: {
+            ...defaultParams,
+            payload: {
                 client_token: goostavApplicationConfig.clientToken,
                 website_url: goostavApplicationConfig.storeUrl,
                 release_platform: 'WOO_COMMERCE',
@@ -34,12 +34,26 @@ const getUrlParams = () => {
     }
 };
 
+const preparePayload = (payloadObject) => {
+    return window.btoa(
+            unescape(
+                encodeURIComponent(
+                    JSON.stringify(payloadObject)
+                )
+            )
+        )
+};
+
 const buildGoostavUrl = () => {
-    const urlBase = 'https://goostav-fe.roihunter.com/?payload=';
+    const urlBase = 'https://goostav-fe.roihunter.com/?';
+    const urlParams = new URLSearchParams();
     const params = getUrlParams();
-    const defaultParams = Object.keys(params.defaultParams).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params.defaultParams[key])}`).join('&');
-    const additionalParams = JSON.stringify(params.additionalParams);
-    return urlBase + window.btoa(unescape(encodeURIComponent(additionalParams))) + '&' + defaultParams;
+
+    for(let param in params) {
+        urlParams.append(param, (typeof params[param] === 'string') ? params[param] : preparePayload(params[param]));
+    }
+
+    return urlBase + urlParams;
 };
 
 document.addEventListener("DOMContentLoaded", function() {
