@@ -78,14 +78,14 @@ class WC_Settings_RH_Easy_New {
 
         <div class="mdl-card mdl-shadow--2dp roi-card">
             <div class="mdl-card__title roi-title">
-                <h2 class="mdl-card__title-text">Welcome</h2>
+                <h2 class="mdl-card__title-text"><?= __( 'Welcome', 'roi-hunter-easy' ) ?></h2>
             </div>
             <div class="mdl-card__supporting-text roi-subtitle">
-                To set up your account and ads, please visit our application.
+                <?= __( 'To set up your account and ads, please visit our application.', 'roi-hunter-easy' ) ?>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="roi-goto-goostav">
-                    Go to the application
+                    <?= __( 'Go to the application', 'roi-hunter-easy' ) ?>
                 </a>
             </div>
         </div>
