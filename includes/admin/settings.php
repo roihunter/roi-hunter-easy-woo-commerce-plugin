@@ -64,10 +64,7 @@ class WC_Settings_RH_Easy_New {
             'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
         );
 
-        wp_enqueue_script( 'material-ui', RH_EASY_URL . 'assets/js/material.min.js' );
         wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
-
-        wp_enqueue_style( 'roi-hunter-easy', RH_EASY_URL . 'assets/css/material.min.css' );
         wp_enqueue_style( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/css/admin.min.css' );
 
         ?>
@@ -76,16 +73,13 @@ class WC_Settings_RH_Easy_New {
             const goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
         </script>
 
-        <div class="mdl-card mdl-shadow--2dp roi-card">
-            <div class="mdl-card__title roi-title">
-                <h2 class="mdl-card__title-text"><?= __( 'Welcome', 'roi-hunter-easy' ) ?></h2>
-            </div>
-            <div class="mdl-card__supporting-text roi-subtitle">
-                <?= __( 'To set up your account and ads, please visit our application.', 'roi-hunter-easy' ) ?>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id="roi-goto-goostav">
-                    <?= __( 'Go to the application', 'roi-hunter-easy' ) ?>
+        <div class="roi-paper">
+            <h2>Welcome to ROI Hunter Easy!</h2>
+            <p>Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow.</p>
+            <p>To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below.</p>
+            <div class="button-wrap">
+                <a id="roi-goto-goostav">
+                    <?= __( 'Open ROI Hunter Easy', 'roi-hunter-easy' ) ?>
                 </a>
             </div>
         </div>
