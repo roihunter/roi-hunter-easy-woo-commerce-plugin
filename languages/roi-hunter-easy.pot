@@ -77,14 +77,18 @@ msgstr ""
 msgid "Thank you for using ROI Hunter Easy."
 msgstr ""
 
-#: includes/admin/settings.php:81
-msgid "Welcome"
+#: includes/admin/settings.php:78
+msgid "Welcome to ROI Hunter Easy!"
 msgstr ""
 
-#: includes/admin/settings.php:84
-msgid "To set up your account and ads, please visit our application."
+#: includes/admin/settings.php:79
+msgid "Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow."
 msgstr ""
 
-#: includes/admin/settings.php:88
-msgid "Go to the application"
+#: includes/admin/settings.php:80
+msgid "To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below."
+msgstr ""
+
+#: includes/admin/settings.php:83
+msgid "Open ROI Hunter Easy"
 msgstr ""

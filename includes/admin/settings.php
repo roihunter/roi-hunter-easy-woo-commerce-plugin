@@ -61,7 +61,8 @@ class WC_Settings_RH_Easy_New {
             'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
             'wooCommerceApiKey' => $helper->get_option('cust_key'),
             'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
-            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
+            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL,
+            'shopId' => $_SERVER['SERVER_NAME']
         );
 
         wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
@@ -74,9 +75,9 @@ class WC_Settings_RH_Easy_New {
         </script>
 
         <div class="roi-paper">
-            <h2>Welcome to ROI Hunter Easy!</h2>
-            <p>Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow.</p>
-            <p>To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below.</p>
+            <h2><?= __( 'Welcome to ROI Hunter Easy!', 'roi-hunter-easy' ) ?></h2>
+            <p><?= __( 'Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow.', 'roi-hunter-easy' ) ?></p>
+            <p><?= __( 'To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below.', 'roi-hunter-easy' ) ?></p>
             <div class="button-wrap">
                 <a id="roi-goto-goostav">
                     <?= __( 'Open ROI Hunter Easy', 'roi-hunter-easy' ) ?>
