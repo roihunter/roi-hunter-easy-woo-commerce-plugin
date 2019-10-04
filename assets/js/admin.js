@@ -10,6 +10,7 @@ const getUrlParams = () => {
             ...defaultParams,
             payload: {
                 accessToken: goostavApplicationConfig.accessToken,
+                type: goostavApplicationConfig.type,
             }
         }
     } else {
@@ -17,9 +18,9 @@ const getUrlParams = () => {
             ...defaultParams,
             payload: {
                 client_token: goostavApplicationConfig.clientToken,
+                type: goostavApplicationConfig.type,
                 website_url: goostavApplicationConfig.storeUrl,
                 release_platform: 'WOO_COMMERCE',
-                shop_id: goostavApplicationConfig.shopId,
                 source_feed_url: goostavApplicationConfig.previewUrl,
                 source_feed_username: goostavApplicationConfig.wooCommerceApiKey,
                 source_feed_password: goostavApplicationConfig.wooCommerceApiSecret,

@@ -61,8 +61,7 @@ class WC_Settings_RH_Easy_New {
             'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
             'wooCommerceApiKey' => $helper->get_option('cust_key'),
             'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
-            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL,
-            'shopId' => $_SERVER['SERVER_NAME']
+            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
         );
 
         wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
