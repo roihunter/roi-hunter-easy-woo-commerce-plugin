@@ -37,32 +37,8 @@ class WC_Settings_RH_Easy_New {
 
     public function settings_page_content() {
 
-        $location = wc_get_base_location();
-        $language = substr( get_bloginfo ( 'language' ), 0, 2 );
         $helper = new RH_Easy_Helper();
-
-        // Check if WooCommerce REST API enabled and if user exists
-        $helper->check_woocommerce_rest_api();
-
-        $applicationConfig = array(
-            'type' => 'rh-easy-woo-commerce-initial-message',
-            'storeUrl' => get_bloginfo('url'), // Public url of store homepage
-            'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
-            'rhStateApiBaseUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1',
-            'storeName' => get_bloginfo('name'), // Name of the store
-            'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
-            'storeLanguage' => $language, // Primary language of the store
-            'storeCountry' => $location['country'], // Primary target country of the store
-            'pluginVersion' => 'woo-commerce_' . RH_EASY_VERSION,
-            'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
-            'customerId' => $helper->get_option( 'customer_id' ), // RH Easy customer ID
-            'accessToken' => $helper->get_option( 'access_token' ), // RH Easy access token
-            'clientToken' => $helper->get_option( 'clientToken' ), // Client token for authentication in store API (eg. https://my-woo-store.com/wp-json/roihuntereasy/state)
-            'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
-            'wooCommerceApiKey' => $helper->get_option('cust_key'),
-            'wooCommerceApiSecret' => $helper->get_option('cust_secret'),
-            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
-        );
+        $applicationConfig = $helper->get_config();
 
         wp_enqueue_script( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/js/admin.min.js' );
         wp_enqueue_style( 'roi-hunter-easy-admin', RH_EASY_URL . 'assets/css/admin.min.css' );
@@ -70,7 +46,7 @@ class WC_Settings_RH_Easy_New {
         ?>
 
         <script type="application/javascript">
-            const goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
+            let goostavApplicationConfig = JSON.parse('<?= json_encode($applicationConfig) ?>');
         </script>
 
         <div class="roi-paper">

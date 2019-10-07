@@ -1,4 +1,4 @@
-const getUrlParams = () => {
+function getUrlParams() {
     const defaultParams = {
         profile: goostavApplicationConfig.activeBeProfile,
         platform: 'WOO_COMMERCE',
@@ -32,9 +32,9 @@ const getUrlParams = () => {
             }
         }
     }
-};
+}
 
-const preparePayload = (payloadObject) => {
+function preparePayload(payloadObject) {
     return window.btoa(
             unescape(
                 encodeURIComponent(
@@ -42,9 +42,9 @@ const preparePayload = (payloadObject) => {
                 )
             )
         )
-};
+}
 
-const buildGoostavUrl = () => {
+function buildGoostavUrl() {
     const urlBase = 'https://goostav-fe.roihunter.com/?';
     const urlParams = new URLSearchParams();
     const params = getUrlParams();
@@ -54,11 +54,38 @@ const buildGoostavUrl = () => {
     }
 
     return urlBase + urlParams;
-};
+}
+
+async function updateConfig() {
+    try {
+        const response = await fetch(`/wp-json/roi-hunter-easy/v1/config?clientToken=${goostavApplicationConfig.clientToken}`);
+        if (response.ok) {
+            goostavApplicationConfig = await response.json();
+
+            if (goostavApplicationConfig.accessToken) {
+                window.clearInterval(interval);
+            }
+        }
+    } catch {
+        // it doesn't work, stop calling
+        window.clearInterval(interval);
+    }
+}
+
+let interval;
+
+function setUpConfigRenewal() {
+    if (goostavApplicationConfig.accessToken) {
+        return false;
+    }
+
+    interval = window.setInterval(updateConfig, 10000);
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const button = document.getElementById('roi-goto-goostav');
     button.addEventListener('click', function () {
         window.open(buildGoostavUrl());
+        setUpConfigRenewal();
     });
 });

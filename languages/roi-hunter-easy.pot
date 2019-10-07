@@ -44,15 +44,15 @@ msgstr ""
 msgid "The plugin has been deactivated."
 msgstr ""
 
-#: includes/class-rh-easy-helper.php:181
+#: includes/class-rh-easy-helper.php:218
 msgid "Roi Hunter Easy"
 msgstr ""
 
-#: includes/rest-api-endpoints.php:137, includes/rest-api-endpoints.php:166, includes/rest-api-endpoints.php:211, includes/rest-api-endpoints.php:244, includes/rest-api-endpoints.php:276, includes/rest-api-endpoints.php:321
+#: includes/rest-api-endpoints.php:153, includes/rest-api-endpoints.php:182, includes/rest-api-endpoints.php:227, includes/rest-api-endpoints.php:260, includes/rest-api-endpoints.php:292, includes/rest-api-endpoints.php:337, includes/rest-api-endpoints.php:377
 msgid "Provided clientToken is not valid or empty"
 msgstr ""
 
-#: includes/rest-api-endpoints.php:191
+#: includes/rest-api-endpoints.php:207
 msgid "Passed parameters are not supported."
 msgstr ""
 
@@ -77,18 +77,18 @@ msgstr ""
 msgid "Thank you for using ROI Hunter Easy."
 msgstr ""
 
-#: includes/admin/settings.php:77
+#: includes/admin/settings.php:53
 msgid "Welcome to ROI Hunter Easy!"
 msgstr ""
 
-#: includes/admin/settings.php:78
+#: includes/admin/settings.php:54
 msgid "Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow."
 msgstr ""
 
-#: includes/admin/settings.php:79
+#: includes/admin/settings.php:55
 msgid "To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below."
 msgstr ""
 
-#: includes/admin/settings.php:82
+#: includes/admin/settings.php:58
 msgid "Open ROI Hunter Easy"
 msgstr ""
