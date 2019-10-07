@@ -45,7 +45,7 @@ function preparePayload(payloadObject) {
 }
 
 function buildGoostavUrl() {
-    const urlBase = 'https://goostav-fe.roihunter.com/?';
+    const urlBase = goostavApplicationConfig.rhEasyIFrameUrl;
     const urlParams = new URLSearchParams();
     const params = getUrlParams();
 
@@ -53,7 +53,7 @@ function buildGoostavUrl() {
         urlParams.append(param, (typeof params[param] === 'string') ? params[param] : preparePayload(params[param]));
     }
 
-    return urlBase + urlParams;
+    return `${urlBase}?${urlParams}`;
 }
 
 async function updateConfig() {
