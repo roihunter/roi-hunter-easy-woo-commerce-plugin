@@ -1,4 +1,4 @@
-﻿=== Google and Facebook Remarketing & Marketing plugin for WooCommerce | ROI Hunter Easy ===
+﻿=== Automate Your Remarketing | ROI Hunter Easy Ads ===
 Contributors: roihuntereasy, vyskoczilova
 Tags: WooCommerce, Google Dynamic Remarketing, Facebook Dynamic Retargeting, Product Feed, Search Ads
 Requires at least: 4.6
@@ -100,6 +100,9 @@ If you would have any difficulty with the usage of this extension, or have any i
 7. In settings you can see your connected accounts
 
 == Changelog ==
+
+= 1.0.4 (2019-09-20) =
+* Changed the display name
 
 = 1.0.3 (2019-07-08) =
 * Changed internal iframe URL (for FE, GSTV-161)
