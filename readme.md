@@ -48,6 +48,14 @@ The latest versions are always available in the WordPress Repository, and you ca
 
 After the installation, continue by click to `ROI Hunter Easy` menu item and follow the instructions in our Sign Up wizard.
 
+## Build plugin on your own (not recommended)
+
+Preferred way is to download plugin package from WordPress Repositiory but you can also build plugin on your own.
+1. Clone this repository
+2. Open terminal and run ```npm install```
+3. Wait for all packages to be installed, run ```gulp zip```
+4. Zip file will be created in root folder
+
 ## FAQ
 
 ### How to reset the plugin
