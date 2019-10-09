@@ -1,3 +1,7 @@
+function isAccessTokenSet() {
+    return goostavApplicationConfig.accessToken && goostavApplicationConfig.accessToken !== '';
+}
+
 function getUrlParams() {
     const defaultParams = {
         profile: goostavApplicationConfig.activeBeProfile,
@@ -5,7 +9,7 @@ function getUrlParams() {
         plugin_version: goostavApplicationConfig.pluginVersion
     };
 
-    if (goostavApplicationConfig.accessToken !== '') {
+    if (isAccessTokenSet()) {
         return {
             ...defaultParams,
             payload: {
@@ -62,7 +66,7 @@ async function updateConfig() {
         if (response.ok) {
             goostavApplicationConfig = await response.json();
 
-            if (goostavApplicationConfig.accessToken) {
+            if (isAccessTokenSet()) {
                 window.clearInterval(interval);
             }
         }
@@ -75,7 +79,11 @@ async function updateConfig() {
 let interval;
 
 function setUpConfigRenewal() {
-    if (goostavApplicationConfig.accessToken) {
+    if (interval !== undefined) {
+        return false;
+    }
+
+    if (isAccessTokenSet()) {
         return false;
     }
 
