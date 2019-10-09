@@ -50,7 +50,7 @@ After the installation, continue by click to `ROI Hunter Easy` menu item and fol
 
 ## Build plugin on your own (not recommended)
 
-Preferred way is to download plugin package from WordPress Repositiory but you can also build plugin on your own.
+Preferred way is to download plugin package from WordPress Repositiory or from our [releases page](https://github.com/roihunter/roi-hunter-easy-woo-commerce-plugin/releases), but you can also build plugin on your own.
 1. Clone this repository
 2. Open terminal and run ```npm install```
 3. Wait for all packages to be installed, run ```gulp zip```
