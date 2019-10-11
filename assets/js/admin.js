@@ -1,5 +1,5 @@
 function isAccessTokenSet() {
-    return goostavApplicationConfig.accessToken && goostavApplicationConfig.accessToken !== '';
+    return goostavApplicationConfig.accessToken;
 }
 
 function getUrlParams() {
@@ -79,15 +79,9 @@ async function updateConfig() {
 let interval;
 
 function setUpConfigRenewal() {
-    if (interval !== undefined) {
-        return false;
+    if (!interval && !isAccessTokenSet()) {
+        interval = window.setInterval(updateConfig, 10000);
     }
-
-    if (isAccessTokenSet()) {
-        return false;
-    }
-
-    interval = window.setInterval(updateConfig, 10000);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
