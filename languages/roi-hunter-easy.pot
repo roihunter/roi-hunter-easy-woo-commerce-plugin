@@ -16,6 +16,46 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: roi-hunter-easy-for-woocommerce.php:95, includes/admin/rating.php:26, includes/admin/settings.php:27, includes/admin/settings.php:28
+msgid "ROI Hunter Easy"
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:96
+msgid "WooCommerce"
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:102
+msgid "%1$s requires %2$s version %3$s. Please activate/install %2$s before activation of %1$s. "
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:106
+msgid "%1$s requires %2$s version %3$s. Please upgrade %2$s at least to version %3$s before activation of %1$s. "
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:112
+msgid "%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>"
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:118
+msgid "%1$s requires at least PHP 5.3. Contact your hosting provider for more support.</b>"
+msgstr ""
+
+#: roi-hunter-easy-for-woocommerce.php:122
+msgid "The plugin has been deactivated."
+msgstr ""
+
+#: includes/class-rh-easy-helper.php:218
+msgid "Roi Hunter Easy"
+msgstr ""
+
+#: includes/rest-api-endpoints.php:153, includes/rest-api-endpoints.php:182, includes/rest-api-endpoints.php:227, includes/rest-api-endpoints.php:260, includes/rest-api-endpoints.php:292, includes/rest-api-endpoints.php:337, includes/rest-api-endpoints.php:377
+msgid "Provided clientToken is not valid or empty"
+msgstr ""
+
+#: includes/rest-api-endpoints.php:207
+msgid "Passed parameters are not supported."
+msgstr ""
+
 #: includes/admin/plugin-settings-link.php:18
 msgid "View settings"
 msgstr ""
@@ -29,10 +69,6 @@ msgstr ""
 msgid "If you like %1$s please leave us a %2$s rating. A huge thanks in advance!"
 msgstr ""
 
-#: includes/admin/rating.php:26, includes/admin/settings.php:27, includes/admin/settings.php:28, roi-hunter-easy-for-woocommerce.php:94
-msgid "ROI Hunter Easy"
-msgstr ""
-
 #: includes/admin/rating.php:27
 msgid "Thanks :)"
 msgstr ""
@@ -41,42 +77,18 @@ msgstr ""
 msgid "Thank you for using ROI Hunter Easy."
 msgstr ""
 
-#: includes/admin/settings.php:96
-msgid "Your browser does not support iFrames."
+#: includes/admin/settings.php:53
+msgid "Welcome to ROI Hunter Easy!"
 msgstr ""
 
-#: includes/class-rh-easy-helper.php:181
-msgid "Roi Hunter Easy"
+#: includes/admin/settings.php:54
+msgid "Thank you for joining our ever-growing <strong>community of +15000 merchants.</strong> has your journey just begun? Do you have an established store? Do not worry we have you covered, we help merchants of all sizes grow."
 msgstr ""
 
-#: includes/rest-api-endpoints.php:137, includes/rest-api-endpoints.php:166, includes/rest-api-endpoints.php:211, includes/rest-api-endpoints.php:244, includes/rest-api-endpoints.php:276, includes/rest-api-endpoints.php:321
-msgid "Provided clientToken is not valid or empty"
+#: includes/admin/settings.php:55
+msgid "To automatize advertising and <strong>start growing your sales,</strong> just go hit the button below."
 msgstr ""
 
-#: includes/rest-api-endpoints.php:191
-msgid "Passed parameters are not supported."
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:95
-msgid "WooCommerce"
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:101
-msgid "%1$s requires %2$s version %3$s. Please activate/install %2$s before activation of %1$s. "
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:105
-msgid "%1$s requires %2$s version %3$s. Please upgrade %2$s at least to version %3$s before activation of %1$s. "
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:111
-msgid "%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>"
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:117
-msgid "%1$s requires at least PHP 5.3. Contact your hosting provider for more support.</b>"
-msgstr ""
-
-#: roi-hunter-easy-for-woocommerce.php:121
-msgid "The plugin has been deactivated."
+#: includes/admin/settings.php:58
+msgid "Open ROI Hunter Easy"
 msgstr ""

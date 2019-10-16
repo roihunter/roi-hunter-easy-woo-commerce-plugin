@@ -2,7 +2,7 @@
 /*
 Plugin Name: ROI Hunter Easy for WooCommerce
 Description: Turn visitors into customers.
-Version:     1.0.4
+Version:     1.0.5
 Author:      ROI Hunter Easy
 Author URI:  https://easy.roihunter.com
 */
@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'RH_EASY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RH_EASY_URL', plugin_dir_url( __FILE__ ) );
 define( 'RH_EASY_BASENAME', plugin_basename( __FILE__ ) );
-define( 'RH_EASY_VERSION', '1.0.4' );
+define( 'RH_EASY_VERSION', '1.0.5' );
 define( 'RH_EASY_FRONTEND_URL', 'https://goostav-fe.roihunter.com/' );
 define( 'RH_EASY_MIN_WC_VERSION', '3.4.0');
 
@@ -32,15 +32,15 @@ function roi_hunter_easy_localize_plugin() {
  */
 add_action( 'plugins_loaded', 'roi_hunter_easy_plugin_init' );
 function roi_hunter_easy_plugin_init() {
-	
+
 	// If WooCommerce is NOT active, if not correct version or not pretty permalinks or old PHP version
 	if ( ! class_exists( 'woocommerce' ) || ! get_option('permalink_structure') || ( class_exists( 'woocommerce' ) && version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) ) || version_compare( PHP_VERSION, '5.3.0' ) < 0 ) {
-		
+
 		add_action( 'admin_init', 'roi_hunter_easy_deactivate' );
 		add_action( 'admin_notices', 'roi_hunter_easy_admin_notice' );
-		return;	
+		return;
 
-    } 
+    }
 
 	// Classes
 	require_once( RH_EASY_DIR . 'includes/class-rh-easy-helper.php' );
@@ -54,9 +54,9 @@ function roi_hunter_easy_plugin_init() {
 	// Scripts
 	require_once( RH_EASY_DIR . 'includes/enqueue_scripts.php' );
 	require_once( RH_EASY_DIR . 'includes/ajax.php' );
-	
+
 	// Admin
-	require_once( RH_EASY_DIR . 'includes/admin/settings.php' );				
+	require_once( RH_EASY_DIR . 'includes/admin/settings.php' );
 	require_once( RH_EASY_DIR . 'includes/admin/plugin-settings-link.php' );
 	require_once( RH_EASY_DIR . 'includes/admin/rating.php' );
 
@@ -94,27 +94,27 @@ function roi_hunter_easy_admin_notice() {
 
 	$roi_hunter_easy_plugin = esc_html( __( 'ROI Hunter Easy', 'roi-hunter-easy' ) );
 	$woocommerce_plugin = esc_html( __( 'WooCommerce', 'roi-hunter-easy' ) );
-			
+
 	$error = '<div class="error">';
 
 	if ( ! class_exists( 'woocommerce' ) ) {
-		
+
 		$error .= '<p>' . sprintf( __( '%1$s requires %2$s version %3$s. Please activate/install %2$s before activation of %1$s. ', 'roi-hunter-easy' ), $roi_hunter_easy_plugin, $woocommerce_plugin, RH_EASY_MIN_WC_VERSION ) . '</p>';
 
 	} elseif ( version_compare( wc()->version, RH_EASY_MIN_WC_VERSION, '<' ) ) {
 
 		$error .= '<p>' . sprintf( __( '%1$s requires %2$s version %3$s. Please upgrade %2$s at least to version %3$s before activation of %1$s. ', 'roi-hunter-easy' ), $roi_hunter_easy_plugin, $woocommerce_plugin, RH_EASY_MIN_WC_VERSION ) . '</p>';
 
-	} 
-	
-	if ( ! get_option('permalink_structure') ) { 
+	}
+
+	if ( ! get_option('permalink_structure') ) {
 
 		$error .= '<p>' . sprintf( __( '%1$s requires pretty permalinks enabled. Please enable pretty permalinks in your settings before activation of %1$s. <b>WARNING: In order to not to loose SEO of your page redirect all old URL to the new ones using your .htaccess and Redirect 301 rules.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
 
 	}
 
-	if ( version_compare( PHP_VERSION, '5.3.0' ) < 0 ) { 
-		
+	if ( version_compare( PHP_VERSION, '5.3.0' ) < 0 ) {
+
 		$error .= '<p>' . sprintf( __( '%1$s requires at least PHP 5.3. Contact your hosting provider for more support.</b>', 'roi-hunter-easy' ), $roi_hunter_easy_plugin ) . '</p>';
 
 	}
@@ -122,7 +122,7 @@ function roi_hunter_easy_admin_notice() {
 	$error .= __('The plugin has been deactivated.', 'roi-hunter-easy' ) . '</div>';
 
 	echo $error;
-		
+
 	if ( isset( $_GET['activate'] ) )
 		unset( $_GET['activate'] );
 }

@@ -20,7 +20,7 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
      * Register the routes for the objects of the controller.
      */
     public function register_routes() {
-      
+
         $version = '1';
         $namespace = 'roi-hunter-easy/v' . $version;
         $base = 'route';
@@ -41,6 +41,22 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
             array(
                 'methods'             => WP_REST_Server::READABLE,
                 'callback'            => array( $this, 'wc_debug' ),
+                'permission_callback' => array( $this, 'get_items_permissions_check' ),
+                'args'                => array(
+                    'clientToken' => array(
+                        'validate_callback' => function($param, $request, $key) {
+                            return $this->check_clientToken( $param );
+                        }
+                    ),
+                )
+            ),
+        ));
+
+        // http://store.com/wp-json/roi-hunter-easy/v1/config
+        register_rest_route( $namespace, '/config', array(
+            array(
+                'methods'             => WP_REST_Server::READABLE,
+                'callback'            => array( $this, 'get_config' ),
                 'permission_callback' => array( $this, 'get_items_permissions_check' ),
                 'args'                => array(
                     'clientToken' => array(
@@ -171,19 +187,19 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
 
         // Check if params exists in our settings
         if ( count(array_intersect_key($params, $collected)) > 0 ) {
-            
+
             $data = array();
-    
+
             // get the value for our settings (skip not existing params)
             foreach( $collected as $key => $value ) {
                 if ( $params[ $key ] ) {
                     $data[ $key ] = $params[ $key ];
                 }
             }
-    
+
             // save into plugin settings
             $helper->update_options( $data );
-    
+
             return new WP_REST_Response( $data, 200 );
 
         } else {
@@ -216,13 +232,13 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
         $data = array();
 
         // get the value for our settings (skip not existing params)
-        foreach( $collected as $key => $value ) {            
+        foreach( $collected as $key => $value ) {
             $data[ $key ] = '';
         }
 
         // save into plugin settings
         $helper->update_options( $data );
-        
+
         return new WP_REST_Response( $data , 200 );
 
     }
@@ -246,15 +262,15 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
 
         $helper = new RH_Easy_Helper();
         $collected = $this->allowed_setting_fields( false );
-        
-        $data = array( 
+
+        $data = array(
             'google_conversion_id' => '',
             'google_conversion_label' => '',
         );
 
         // save into plugin settings
         $helper->update_options( $data );
-        
+
         return new WP_REST_Response( $data , 200 );
 
     }
@@ -278,14 +294,14 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
 
         $helper = new RH_Easy_Helper();
         $collected = $this->allowed_setting_fields( false );
-        
-        $data = array( 
+
+        $data = array(
             'fb_pixel_id' => '',
         );
 
         // save into plugin settings
         $helper->update_options( $data );
-        
+
         return new WP_REST_Response( $data , 200 );
 
     }
@@ -320,7 +336,7 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
         if ( ! $this->check_clientToken( $params['clientToken'] ) ) {
             return new WP_Error( '404', __( 'Provided clientToken is not valid or empty', 'roi-hunter-easy' ) );
         }
-        
+
         $system_status    = new WC_REST_System_Status_Controller();
         $environment      = $system_status->get_environment_info();
         $database         = $system_status->get_database_info();
@@ -333,7 +349,7 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
         //$plugin_updates   = new WC_Plugin_Updates();
         //$untested_plugins = $plugin_updates->get_untested_plugins( WC()->version, 'minor' );
 
-        $data = array(            
+        $data = array(
             'environment' => $environment,
             'database' => $database,
             'active_plugins' => $active_plugins,
@@ -347,13 +363,34 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
     }
 
     /**
+     * Return current goostav config
+     *
+     * @return WP_Error|WP_REST_Response
+     */
+    public function get_config( $request ) {
+
+        // Get parameters from request
+        $params = $request->get_params();
+
+        // Check clientToken
+        if ( ! $this->check_clientToken( $params['clientToken'] ) ) {
+            return new WP_Error( '404', __( 'Provided clientToken is not valid or empty', 'roi-hunter-easy' ) );
+        }
+
+        $helper = new RH_Easy_Helper();
+        $applicationConfig = $helper->get_config();
+
+        return new WP_REST_Response( $applicationConfig, 200 );
+    }
+
+    /**
      * Check if a given request has access to get items
      *
      * @param WP_REST_Request $request Full data about the request.
      * @return WP_Error|bool
      */
     public function get_items_permissions_check( $request ) {
-        return true;        
+        return true;
     }
 
     /**
@@ -369,7 +406,7 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
             'google_conversion_id' => array( 'type' => 'number' ),
             'google_conversion_label' => array( 'type' => 'string' ),
             'fb_pixel_id' => array( 'type' => 'string', ),
-        );            
+        );
 
         if ( $client_token ) {
             $fields['clientToken'] = array( 'type' => 'string', 'validate_callback' => function($param, $request, $key) {
@@ -392,5 +429,5 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
         return false;
 
     }
-   
+
   }

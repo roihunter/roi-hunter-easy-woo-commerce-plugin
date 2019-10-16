@@ -119,6 +119,43 @@ class RH_Easy_Helper
     }
 
     /**
+     * Get application config
+     *
+     * @return array
+     * @since 1.0.5
+     */
+    public function get_config()
+    {
+
+        $location = wc_get_base_location();
+        $language = substr( get_bloginfo ( 'language' ), 0, 2 );
+
+        // Check if WooCommerce REST API enabled and if user exists
+        $this->check_woocommerce_rest_api();
+
+        return array(
+            'type' => 'rh-easy-woo-commerce-initial-message',
+            'storeUrl' => get_bloginfo('url'), // Public url of store homepage
+            'previewUrl' => get_bloginfo('url') . '/wp-json/wc/v2/products/', // Url of API for product previews
+            'rhStateApiBaseUrl' => get_bloginfo('url') . '/wp-json/roi-hunter-easy/v1',
+            'storeName' => get_bloginfo('name'), // Name of the store
+            'storeCurrency' => get_option('woocommerce_currency'), // Primary currency of the store
+            'storeLanguage' => $language, // Primary language of the store
+            'storeCountry' => $location['country'], // Primary target country of the store
+            'pluginVersion' => 'woo-commerce_' . RH_EASY_VERSION,
+            'activeBeProfile' => 'production', // Active application profile (production, staging, dev)
+            'customerId' => $this->get_option( 'customer_id' ), // RH Easy customer ID
+            'accessToken' => $this->get_option( 'access_token' ), // RH Easy access token
+            'clientToken' => $this->get_option( 'clientToken' ), // Client token for authentication in store API (eg. https://my-woo-store.com/wp-json/roihuntereasy/state)
+            'wooCommerceApiUrl' => get_bloginfo('url') . '/wp-json/wc/v2/',
+            'wooCommerceApiKey' => $this->get_option('cust_key'),
+            'wooCommerceApiSecret' => $this->get_option('cust_secret'),
+            'rhEasyIFrameUrl' => RH_EASY_FRONTEND_URL
+        );
+
+    }
+
+    /**
      * Grab the content IDS from different arrays
      *
      * @param array $items
@@ -216,9 +253,9 @@ class RH_Easy_Helper
      * @since 0.0.6
      */
     public static function wc_enqueue_js( $code ) {
-        
+
         global $wc_queued_js;
-  
+
         if (function_exists('wc_enqueue_js') && empty($wc_queued_js)) {
           wc_enqueue_js($code);
         } else {

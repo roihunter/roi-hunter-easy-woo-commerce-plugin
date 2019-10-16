@@ -1,0 +1,57 @@
+.roi-paper {
+    max-width: 840px;
+    height: 350px;
+    background-color: #fff;
+    background-image: url("../images/people.svg");
+    background-repeat: no-repeat;
+    background-position: right 50px top 40px;
+    box-shadow: 0 3px 6px #00000029;
+    border-radius: 6px;
+    margin: 20px auto;
+    padding: 25px 40px;
+    box-sizing: border-box;
+}
+
+.roi-paper h2 {
+    color: #161717;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.roi-paper p {
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.roi-paper .button-wrap {
+    margin-top: 50px;
+}
+
+#roi-goto-goostav {
+    background: #03b09a;
+    box-shadow: 0 2px 2px #0000003D;
+    border: 1px solid #4ba191;
+    border-radius: 4px;
+    padding: 13px 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#roi-goto-goostav:hover {
+    background-color: #009f8d;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .roi-paper {
+        width: 100%;
+        height: auto;
+        background: #fff;
+    }
+
+    .roi-paper p {
+        width: auto;
+        margin-bottom: 20px;
+    }
+}
