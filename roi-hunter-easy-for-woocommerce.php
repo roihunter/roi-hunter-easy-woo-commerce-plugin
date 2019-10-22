@@ -2,7 +2,7 @@
 /*
 Plugin Name: ROI Hunter Easy for WooCommerce
 Description: Turn visitors into customers.
-Version:     1.0.5
+Version:     1.0.6
 Author:      ROI Hunter Easy
 Author URI:  https://easy.roihunter.com
 */
