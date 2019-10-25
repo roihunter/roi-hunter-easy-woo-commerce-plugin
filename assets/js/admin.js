@@ -25,7 +25,7 @@ function getUrlParams() {
                 type: goostavApplicationConfig.type,
                 website_url: goostavApplicationConfig.storeUrl,
                 release_platform: 'WOO_COMMERCE',
-                source_feed_url: goostavApplicationConfig.previewUrl,
+                source_feed_url: goostavApplicationConfig.wooCommerceApiUrl,
                 source_feed_username: goostavApplicationConfig.wooCommerceApiKey,
                 source_feed_password: goostavApplicationConfig.wooCommerceApiSecret,
                 currency: goostavApplicationConfig.storeCurrency,
