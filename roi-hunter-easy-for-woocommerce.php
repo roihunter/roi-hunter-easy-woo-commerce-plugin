@@ -2,7 +2,7 @@
 /*
 Plugin Name: ROI Hunter Easy for WooCommerce
 Description: Turn visitors into customers.
-Version:     1.0.5
+Version:     1.0.6
 Author:      ROI Hunter Easy
 Author URI:  https://easy.roihunter.com
 */
@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'RH_EASY_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RH_EASY_URL', plugin_dir_url( __FILE__ ) );
 define( 'RH_EASY_BASENAME', plugin_basename( __FILE__ ) );
-define( 'RH_EASY_VERSION', '1.0.5' );
+define( 'RH_EASY_VERSION', '1.0.6' );
 define( 'RH_EASY_FRONTEND_URL', 'https://goostav-fe.roihunter.com/' );
 define( 'RH_EASY_MIN_WC_VERSION', '3.4.0');
 
