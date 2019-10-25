@@ -101,8 +101,11 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Changelog ==
 
+= 1.0.7 (2019-10-25) =
+* Fix: Fix product feed url issue
+
 = 1.0.6 (2019-10-22) =
-* Fix: Add missing js,css & image assets
+* Fix: Add missing js, css & image assets
 
 = 1.0.5 (2019-10-04) =
 * Removed iframe, added link to standalone application (for FE, GSTV-719)
