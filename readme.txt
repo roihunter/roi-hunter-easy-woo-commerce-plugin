@@ -102,7 +102,7 @@ If you would have any difficulty with the usage of this extension, or have any i
 == Changelog ==
 
 = 1.0.7 (2019-10-25) =
-* Fix: Take release_platform from correct config value
+* Fix: Fix product feed url issue
 
 = 1.0.6 (2019-10-22) =
 * Fix: Add missing js, css & image assets
