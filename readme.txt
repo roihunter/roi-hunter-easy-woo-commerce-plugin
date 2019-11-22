@@ -101,6 +101,9 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Changelog ==
 
+= 1.0.8 (2019-10-25) =
+* Fix: Fix referrer value for ROI Hunter Easy window
+
 = 1.0.7 (2019-10-25) =
 * Fix: Fix product feed url issue
 

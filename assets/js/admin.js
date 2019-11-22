@@ -84,10 +84,10 @@ function setUpConfigRenewal() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('roi-goto-goostav');
     button.addEventListener('click', function () {
-        window.open(buildGoostavUrl());
+        window.open(buildGoostavUrl(), 'roihunter', 'noreferrer');
         setUpConfigRenewal();
     });
 });
