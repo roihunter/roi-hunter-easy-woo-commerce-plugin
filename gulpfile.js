@@ -101,24 +101,22 @@ gulp.task('css', function() {
  * Generate plugin instalable zip
  */
 // activeBeProfile = production
-gulp.task('zip', function() {
-    gulp.start('css');
-    gulp.start('js');
-    gulp.start('translate');
+gulp.task('zip', function(done) {
+    gulp.series('css', 'js', 'translate');
     gulp.src( zip_files )
         .pipe(zip( plugin_name + '.zip' ))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('.'));
+    done();
     }
 );
 // activeBeProfile = staging
-gulp.task('zip-staging', function() {
-    gulp.start('css');
-    gulp.start('js');
-    gulp.start('translate');
+gulp.task('zip-staging', function(done) {
+    gulp.start('css', 'js', 'translate');
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
         .pipe(replace("https://goostav-fe.roihunter.com/", "https://goostav-fe-staging.roihunter.com/"))
         .pipe(zip( plugin_name + '_staging.zip' ))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('.'));
+    done();
     }
 );
