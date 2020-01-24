@@ -5,7 +5,6 @@
 
 // Dependencies
 var gulp = require('gulp');
-var include = require('gulp-include');
 var minify = require('gulp-minify');
 let cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
@@ -38,7 +37,7 @@ var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
  * https://www.npmjs.com/package/gulp-minify
  */
 
-gulp.task( "js", function() {
+gulp.task( "js", function(done) {
     //console.log( '-- including files to assets/js/admin.js' );
     console.log( '-- minifying to assets/js/admin.min.js' );
     gulp.src( wpTheme + 'assets/js/admin.js' )
@@ -59,9 +58,10 @@ gulp.task( "js", function() {
           }
       }))
       .pipe( gulp.dest( 'assets/js' ) );
+    done();
   });
 
-gulp.task('css', function() {
+gulp.task('css', function(done) {
     gulp.src( wpTheme + 'assets/css/admin.css' )
         .pipe(cleanCss({
             compatibility: 'ie8'
@@ -70,6 +70,7 @@ gulp.task('css', function() {
             suffix: '.min'
         }))
         .pipe( gulp.dest( 'assets/css' ) );
+    done();
 });
 
 /**
@@ -102,21 +103,19 @@ gulp.task('css', function() {
  */
 // activeBeProfile = production
 gulp.task('zip', function(done) {
-    gulp.series('css', 'js', 'translate');
+    gulp.series('css', 'js', 'translate')(done);
     gulp.src( zip_files )
         .pipe(zip( plugin_name + '.zip' ))
         .pipe(gulp.dest('.'));
-    done();
     }
 );
 // activeBeProfile = staging
 gulp.task('zip-staging', function(done) {
-    gulp.start('css', 'js', 'translate');
+    gulp.series('css', 'js', 'translate')(done);
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
         .pipe(replace("https://goostav-fe.roihunter.com/", "https://goostav-fe-staging.roihunter.com/"))
         .pipe(zip( plugin_name + '_staging.zip' ))
         .pipe(gulp.dest('.'));
-    done();
     }
 );
