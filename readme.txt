@@ -101,6 +101,9 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Changelog ==
 
+= 1.0.9 (2020-04-15) =
+* Feature: Notify RH Easy BE service about plugin deactivation
+
 = 1.0.8 (2019-10-25) =
 * Fix: Fix referrer value for ROI Hunter Easy window
 
