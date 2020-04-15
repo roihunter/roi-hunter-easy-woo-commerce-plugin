@@ -115,6 +115,7 @@ gulp.task('zip-staging', function(done) {
     gulp.src( zip_files )
         .pipe(replace("'activeBeProfile' => 'production'", "'activeBeProfile' => 'staging'"))
         .pipe(replace("https://goostav-fe.roihunter.com/", "https://goostav-fe-staging.roihunter.com/"))
+        .pipe(replace("https://goostav.roihunter.com/", "https://goostav-staging.roihunter.com/"))
         .pipe(zip( plugin_name + '_staging.zip' ))
         .pipe(gulp.dest('.'));
     }
