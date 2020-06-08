@@ -190,11 +190,9 @@ class RH_Easy_Custom_REST_API extends WP_REST_Controller {
 
             $data = array();
 
-            // get the value for our settings (skip not existing params)
+            // get the value for our settings
             foreach( $collected as $key => $value ) {
-                if ( $params[ $key ] ) {
-                    $data[ $key ] = $params[ $key ];
-                }
+                $data[ $key ] = $params[ $key ];
             }
 
             // save into plugin settings
