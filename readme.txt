@@ -10,11 +10,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 3.4.0
 WC tested up to: 3.6.3
 
-[ROI Hunter Easy](https://easy.roihunter.com/) Create powerful ads for Google and Facebook with ROI Hunter Easy Ads plugin for WooCommerce. Convert past visitors with retargeting, bring new traffic with enganging ads. All solutions in one plugin.
+[ROI Hunter Easy](https://easy.roihunter.com/) Create powerful ads for Google and Facebook with ROI Hunter Easy Ads plugin for WooCommerce. Convert past visitors with retargeting, bring new traffic with engaging ads. All solutions in one plugin.
 
 == Description ==
 
-**ROI Hunter Easy Ads make it simple to promote your products.
+**ROI Hunter Easy Ads make it simple to promote your products.**
+
 Drive awareness, traffic, and sales to your store in a few clicks, all from one location. Our smart technology works behind the scenes to make your promotions as profitable as possible.
 
 * Attract new customers with ads on Facebook feed, Instagram Stories and Google Smart Shopping and Search.
@@ -22,11 +23,16 @@ Drive awareness, traffic, and sales to your store in a few clicks, all from one 
 * Showcase your winning or best selling products with creative ads. Show them to the world with our crafted colorful video templates in our Video Editor.
 
 = Benefits =
-**Reach more people on Facebook, Instagram and Google
-Whether you’re a new online store or a well-established brand, prospective buyers are what help your business grow. Reach new audiences with Google Search Ads, Facebook Prospecting, or leverage the powerful Google Smart Shopping for greater profitability. 
-**Retarget visitors on Google and Facebook
-Show your visitors what they’re missing! Whether they just browsed your products before exiting the site, or put something in their cart then left, you can bring them back with retargeting. 
-**Create product videos in minutes from just a static image
+**Reach more people on Facebook, Instagram and Google**
+
+Whether you’re a new online store or a well-established brand, prospective buyers are what help your business grow. Reach new audiences with Google Search Ads, Facebook Prospecting, or leverage the powerful Google Smart Shopping for greater profitability.
+
+**Retarget visitors on Google and Facebook**
+
+Show your visitors what they’re missing! Whether they just browsed your products before exiting the site, or put something in their cart then left, you can bring them back with retargeting.
+
+**Create product videos in minutes from just a static image**
+
 You don't need a video production department to design beautiful video ads. You can turn any static image into an engaging video in a minute two. Give your Facebook promotions an extra edge by creating a captivating video for any product.
 
 = Setup is quick and easy =
@@ -41,16 +47,16 @@ ROI Hunter Easy takes care of all the difficult tech settings. You only need to:
 
 = Pricing =
 Find out about all the [pricing options](https://easy.roihunter.com/pricing)
-A separate Google Ads account and Facebook Business Manager are required. You pay your ad spend to Google and Facebook directly. 
+A separate Google Ads account and Facebook Business Manager are required. You pay your ad spend to Google and Facebook directly.
 
-= Features: =
+= Features =
 ROI Hunter will automatically do these things for you:
 
 * create product catalog for your website
 * upload your product feed to Google
 * upload your product catalog to Facebook
 * setup Google tracking code for your website
-* setup Facebook pixel for your website or choose your own pixel
+* setup Facebook pixel for your website
 * automatically set up remarketing audiences
 * and much more
 
@@ -91,13 +97,11 @@ If you would have any difficulty with the usage of this extension, or have any i
 
 == Screenshots ==
 
-1. Connect your Google Ads Account
-2. Preview your Google Ads
-3. Set your daily budget for Google Ads
-4. Connect your Facebook
-5. Preview your Facebook Ads
-6. Give it some time and watch the results
-7. In settings you can see your connected accounts
+1. Choose campaign objective
+2. Pick your ad type
+3. Connect ad accounts and create ads
+4. Dashboard with campaigns' statistics
+5. Enhance your Facebook Ads
 
 == Changelog ==
 
