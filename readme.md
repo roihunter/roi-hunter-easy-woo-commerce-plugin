@@ -1,30 +1,55 @@
-# ROI Hunter Easy Retargeting
+# ROI Hunter Easy Ads
 [![plugin version](https://img.shields.io/wordpress/plugin/v/roi-hunter-easy-for-woocommerce.svg)](https://wordpress.org/plugins/roi-hunter-easy-for-woocommerce)
 
-Growing sales have never been easier thanks to [ROI Hunter Easy Retargeting](https://easy.roihunter.com/). Re-engage your unconverted visitors through dynamic ads on Google Display Network and Facebook, showing them precisely what they forgot to buy.  Leave all the complicated tech stuff to us. With ROI Hunter Easy you don't have to worry about putting codes to right places, segmenting the audience, complicated bidding strategies, generating the product feed etc. We do it all for you, in a matter of seconds.  
+# Description
+**ROI Hunter Easy Ads make it simple to promote your products.**
 
-Do you want to boost the power of your ads even further? Our plugin gives you access to professionally designed Facebook Ad Overlays. With their help, you'll be able to stand out in the barrage of ads everyday internet user encounters and get the attention you deserve. 
+Drive awareness, traffic, and sales to your store in a few clicks, all from one location. Our smart technology works behind the scenes to make your promotions as profitable as possible.
+
+* Attract new customers with ads on Facebook feed, Instagram Stories and Google Smart Shopping and Search.
+* Bring back visitors who abandoned their cart. Get a second shot at making the sale with powerful retargeting ads.
+* Showcase your winning or best selling products with creative ads. Show them to the world with our crafted colorful video templates in our Video Editor.
+## Benefits
+**Reach more people on Facebook, Instagram and Google**
+
+Whether you’re a new online store or a well-established brand, prospective buyers are what help your business grow. Reach new audiences with Google Search Ads, Facebook Prospecting, or leverage the powerful Google Smart Shopping for greater profitability.
+
+**Retarget visitors on Google and Facebook**
+
+Show your visitors what they’re missing! Whether they just browsed your products before exiting the site, or put something in their cart then left, you can bring them back with retargeting.
+
+**Create product videos in minutes from just a static image**
+
+You don't need a video production department to design beautiful video ads. You can turn any static image into an engaging video in a minute two. Give your Facebook promotions an extra edge by creating a captivating video for any product.
 
 ## Setup is quick and easy
-ROI Hunter Easy will take care of all the annoying tech settings so you can have professional remarketing campaigns in 4 simple steps:
+ROI Hunter Easy takes care of all the difficult tech settings. You only need to:
 
-* Install the plugin to your WooCommerce store for Free
-* Connect Google Ads
-* Connect Facebook Business Manager
+* Install the plugin to your WooCommerce store
+* Choose the campaign objective
+* Connect Facebook Business Manager and Google Ads
 * Create your first Campaign
+* Select pricing that best fits your needs
+* Publish your ads and start advertising
 
 You do not need any technical knowledge. ROI Hunter Easy does all settings for you.
 
-**A separate Google Ads account and Facebook Business Manager are required. ROI Hunter Easy is free. You only pay for your running ads directly to Google and Facebook. You can set up your budget directly in ROI Hunter Easy.**
+**A separate Google Ads account and Facebook Business Manager are required. You can set up your campaign budget directly in ROI Hunter Easy.**
+
+## Pricing
+Find out about all the [pricing options](https://easy.roihunter.com/pricing)
+A separate Google Ads account and Facebook Business Manager are required. You pay your ad spend to Google and Facebook directly.
 
 ## Features:
 ROI Hunter will automatically do these things for you:
+
 * create product catalog for your website
 * upload your product feed to Google
 * upload your product catalog to Facebook
 * setup Google tracking code for your website
 * setup Facebook pixel for your website
 * automatically set up remarketing audiences
+* and much more
 
 Plugin reflects our best practices from over 10 years of advertising experience in Google Ads and Facebook.
 
