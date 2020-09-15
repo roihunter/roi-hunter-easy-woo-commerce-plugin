@@ -2,13 +2,13 @@
 Contributors: roihuntereasy, vyskoczilova
 Tags: WooCommerce, Google Dynamic Remarketing, Facebook Dynamic Retargeting, Product Feed, Search Ads, Google Shopping, Search Ads, Facebook Catalog
 Requires at least: 4.6
-Tested up to: 5.2
+Tested up to: 5.5
 Requires PHP: 5.3.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WC requires at least: 3.4.0
-WC tested up to: 3.6.3
+WC tested up to: 4.5.2
 
 [ROI Hunter Easy](https://easy.roihunter.com/) Create powerful ads for Google and Facebook with ROI Hunter Easy Ads plugin for WooCommerce. Convert past visitors with retargeting, bring new traffic with engaging ads. All solutions in one plugin.
 
