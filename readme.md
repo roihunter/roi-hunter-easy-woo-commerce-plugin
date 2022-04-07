@@ -1,3 +1,5 @@
+## The ROI Hunter Easy project has been canceled and the support has ended. If you have any questions regarding your plugin, contact us at easy@roihunter.com.
+
 # ROI Hunter Easy Ads
 [![plugin version](https://img.shields.io/wordpress/plugin/v/roi-hunter-easy-for-woocommerce.svg)](https://wordpress.org/plugins/roi-hunter-easy-for-woocommerce)
 
